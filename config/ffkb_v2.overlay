@@ -8,18 +8,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-    chosen {
-        zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
-        // for logging, remove later
-        zephyr,console = &cdc_acm_uart;
-    };
-
     kscan0: kscan_0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-
         col-gpios
             = <&pro_micro 21 GPIO_ACTIVE_HIGH> // col 0
             , <&pro_micro 20 GPIO_ACTIVE_HIGH> // col 1
@@ -38,7 +27,6 @@
     };
 
     default_transform: keymap_transform_0 {
-        compatible = "zmk,matrix-transform";
         columns = <6>;
         rows = <4>;
 
