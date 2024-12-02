@@ -1,0 +1,13 @@
+file_format: "1"
+id: shiniboard01
+name: shiniboard01
+type: shield
+url: https://github.com/MakotoKurauchi/shiniboard01
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - shiniboard01_left
+  - shiniboard01_right

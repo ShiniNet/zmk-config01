@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: helix_left
+    shield: shiniboard01_left
   - board: nice_nano_v2
-    shield: helix_right
+    shield: shiniboard01_right
