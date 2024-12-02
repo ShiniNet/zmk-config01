@@ -29,7 +29,6 @@
     default_transform: keymap_transform_0 {
         columns = <6>;
         rows = <4>;
-        diode-direction = "col2row";
 
         map = <
                 RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) 
