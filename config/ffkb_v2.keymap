@@ -15,39 +15,7 @@
  #define DEFAULT 0
  #define FUNC    1
  
- &caps_word {
-     continue-list = <UNDERSCORE MINUS>;
- };
- 
  / {
-     combos {
-         compatible = "zmk,combos";
-         combo_undo {
-             timeout-ms = <50>;
-             key-positions = <25 26>;
-             bindings = <&kp LC(Z)>;
-         };
-     };
- };
- 
- / {
-     behaviors {
-         hm: homerow_mods {
-             compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <2>;
-             tapping-term-ms = <200>;
-             flavor = "tap-preferred";
-             bindings = <&kp>, <&kp>;
-         };
-         hs: homerow_shift {
-             compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <2>;
-             tapping-term-ms = <175>;
-             flavor = "balanced";
-             bindings = <&kp>, <&kp>;
-         };
-     };
- 
      keymap {
          compatible = "zmk,keymap";
  
