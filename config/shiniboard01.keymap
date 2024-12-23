@@ -13,14 +13,14 @@
  #include <dt-bindings/zmk/outputs.h>
  #include <dt-bindings/zmk/pointing.h>
 
- // #includeのあとのあたりにスクロール量を変更
- #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
-
  #define DEFAULT 0
  #define LOWER  1
  #define RAISE  2
  #define ADJUST 3
 
+ // Mouse Scroll Value
+ #define ZMK_MOUSE_DEFAULT_SCRL_VAL 200
+ 
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
 As such, those are in use within the default layer at this time.*/
@@ -31,14 +31,12 @@ As such, those are in use within the default layer at this time.*/
 };
 
 / {
-       //  behaviors に追加
-       // 新しいスクロール動作の追加
+       // Mouse Scroll
        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
            compatible = "zmk,behavior-sensor-rotate";
            #sensor-binding-cells = <0>;
            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-           // 追加: スクロールのタップ時間を設定 (20ms)
-           tap-ms = <20>;
+           tap-ms = <30>;
        };
 
        keymap {
