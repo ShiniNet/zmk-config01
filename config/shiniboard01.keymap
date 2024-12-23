@@ -37,7 +37,7 @@ As such, those are in use within the default layer at this time.*/
                      compatible = "zmk,behavior-sensor-rotate";
                      #sensor-binding-cells = <0>;
                      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-                     tap-ms = <400>;
+                     tap-ms = <100>;
               };
        };
 
