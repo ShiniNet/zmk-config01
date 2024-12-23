@@ -44,8 +44,8 @@
     // Encoders
     left_encoder: encoder_left {
         compatible = "alps,ec11";
-        a-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&gpio0 09 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        a-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <15>;
         status = "okay";
     };
@@ -54,12 +54,8 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <30>;
     };
-    
 };
 
-&gpio0 {
-    status = "okay";
-};
 
 &pro_micro_i2c {
     status = "okay";
