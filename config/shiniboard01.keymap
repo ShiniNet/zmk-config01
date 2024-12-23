@@ -46,8 +46,8 @@ As such, those are in use within the default layer at this time.*/
 
               default_layer {
                      display-name = "Default";
-                     //sensor-bindings = <&scroll_up_down>;
-                     sensor-bindings = <&inc_dec_kp UP DOWN>;
+                     sensor-bindings = <&scroll_up_down>;
+                     //sensor-bindings = <&inc_dec_kp UP DOWN>;
  // ---------------------------------------------------------------------------------------------------------------------------------
  // | GRAVE  |   1    |   2    |   3    |   4    |   5    |                      |   6    |   7    |   8    |   9    |   0    |  DEL   |
  // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
