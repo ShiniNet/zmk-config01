@@ -30,21 +30,22 @@ As such, those are in use within the default layer at this time.*/
               triggers-per-rotation = <20>;
        };
 
-// 新しいスクロール動作の追加
+/* 新しいスクロール動作の追加
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             // 追加: スクロールのタップ時間を設定 (20ms)
             tap-ms = <20>;
-        };
+       };
+*/
 
        keymap {
               compatible = "zmk,keymap";
 
               default_layer {
                      display-name = "Default";
-                     sensor-bindings = <&scroll_up_down>;
+                     sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
  // ---------------------------------------------------------------------------------------------------------------------------------
  // | GRAVE  |   1    |   2    |   3    |   4    |   5    |                      |   6    |   7    |   8    |   9    |   0    |  DEL   |
  // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
@@ -61,7 +62,7 @@ As such, those are in use within the default layer at this time.*/
               };
               lower_layer {
                      display-name = "lower_layer";
-                     sensor-bindings = <&scroll_up_down>;
+                     sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
  // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
@@ -73,7 +74,7 @@ As such, those are in use within the default layer at this time.*/
               };
               raise_layer {
                      display-name = "raise_layer";
-                     sensor-bindings = <&scroll_up_down>;
+                     sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
  // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
@@ -85,7 +86,7 @@ As such, those are in use within the default layer at this time.*/
               };
               adjust_layer {
                      display-name = "adjust_layer";
-                     sensor-bindings = <&scroll_up_down>;
+                     sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
  // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
