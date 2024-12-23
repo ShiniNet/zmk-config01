@@ -23,10 +23,11 @@ However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'ei
 As such, those are in use within the default layer at this time.*/
 
 / {
+
        sensors: sensors {
               compatible = "zmk,keymap-sensors";
               status = "okay";
-              sensors = <&left_encoder &right_encoder>;
+              sensors = <&left_encoder>;
               triggers-per-rotation = <20>;
        };
 
