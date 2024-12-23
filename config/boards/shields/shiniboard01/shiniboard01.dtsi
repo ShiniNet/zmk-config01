@@ -18,7 +18,7 @@
         a-gpios = <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <15>;
-        status = "ok";
+        status = "disabled";
     };
     right_encoder: encoder_right {
         compatible = "alps,ec11";
