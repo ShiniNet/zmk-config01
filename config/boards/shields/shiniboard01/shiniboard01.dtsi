@@ -54,8 +54,12 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <30>;
     };
+    
 };
 
+&gpio0 {
+    status = "okay";
+};
 
 &pro_micro_i2c {
     status = "okay";
