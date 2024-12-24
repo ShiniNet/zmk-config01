@@ -27,3 +27,13 @@ config SSD1306
     default y
 
 endif # ZMK_DISPLAY
+
+# スリープモードを有効化
+config ZMK_SLEEP
+    default y
+# アイドル状態に入る前のミリ秒の非アクティブ（ミリ秒単位）
+config ZMK_IDLE_TIMEOUT
+    default 30000
+# スリープまでのアイドル時間（ミリ秒単位）
+config ZMK_IDLE_SLEEP_TIMEOUT
+    default 120000
