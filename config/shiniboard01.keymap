@@ -18,7 +18,7 @@
  #define ADJUST 3
 
  // Mouse Scroll Value
- #define ZMK_POINTING_DEFAULT_SCRL_VAL 140
+ #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
