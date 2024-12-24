@@ -38,9 +38,6 @@ As such, those are in use within the default layer at this time.*/
                      #sensor-binding-cells = <0>;
                      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
                      tap-ms = <20>;
-                     time-based-acceleration:
-                     - 100 2  // 100ms未満の回転で2倍
-                     - 50  4  // 50ms未満の回転で4倍
               };
        };
 
