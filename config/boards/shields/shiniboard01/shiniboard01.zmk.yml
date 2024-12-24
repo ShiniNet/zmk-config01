@@ -2,7 +2,7 @@ file_format: "1"
 id: shiniboard01
 name: shiniboard01
 type: shield
-url: https://github.com/MakotoKurauchi/shiniboard01
+url: https://github.com/ShiniNet/zmk-config01/
 requires: [pro_micro]
 exposes: [i2c_oled]
 features:
