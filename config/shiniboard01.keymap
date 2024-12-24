@@ -19,7 +19,7 @@
  #define ADJUST 3
 
  // Mouse Scroll Value
- #define ZMK_MOUSE_DEFAULT_SCRL_VAL 200
+ #define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
  
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
@@ -37,7 +37,7 @@ As such, those are in use within the default layer at this time.*/
                      compatible = "zmk,behavior-sensor-rotate";
                      #sensor-binding-cells = <0>;
                      bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-                     tap-ms = <120>;
+                     tap-ms = <20>;
               };
        };
 
