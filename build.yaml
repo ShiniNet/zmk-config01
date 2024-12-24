@@ -23,8 +23,3 @@ include:
      shield: shiniboard01_left
 #   - board: nice_nano_v2
 #     shield: shiniboard01_right
-
-
-#include:
-#  - board: nice_nano_v2
-#    shield: ffkb_v2
