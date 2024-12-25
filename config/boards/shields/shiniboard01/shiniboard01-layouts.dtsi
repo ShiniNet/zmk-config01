@@ -1,4 +1,5 @@
 #include <physical_layouts.dtsi>
+#include "position_map.dtsi"
 
 / {
     shiniboard01_physical_layout: shiniboard01_physical_layout {
@@ -62,13 +63,8 @@
             , <&key_physical_attrs 100 100  300  500       0     0     0>
             ;
     };
-
-    layout_shiniboard01_position_map: layout_shiniboard01_position_map {
-        compatible = "zmk,physical-layout-position-map";
-
-        complete;
-    };
 };
+
 &layout_shiniboard01_position_map  {
     layout_shiniboard01_map: layout_shiniboard01 {
         physical-layout = <&shiniboard01_physical_layout>;

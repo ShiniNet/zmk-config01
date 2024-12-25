@@ -1,0 +1,9 @@
+
+
+/ {
+    layout_shiniboard01_position_map: layout_shiniboard01_position_map {
+        compatible = "zmk,physical-layout-position-map";
+
+        complete;
+    };
+};
