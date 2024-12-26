@@ -120,8 +120,8 @@ As such, those are in use within the default layer at this time.*/
                      sensor-bindings = <&scroll_up_down>;
  // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
-       &trans    &kp BTN_0 &kp BTN_1 &kp BTN_2 &kp BTN_3 &kp BTN_4                   &trans    &trans    &trans    &trans     &trans    &trans
-       //&trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
+       //&trans    &kp BTN_0 &kp BTN_1 &kp BTN_2 &kp BTN_3 &kp BTN_4                   &trans    &trans    &trans    &trans     &trans    &trans
+       &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans              &trans    &trans                      &trans    &trans              &trans     &trans    &trans
