@@ -63,7 +63,7 @@ As such, those are in use within the default layer at this time.*/
        &kp ESC    &kp Q    &kp W    &kp E     &kp R     &kp T                       &kp Y     &kp U     &kp I     &kp O      &kp P     &kp SEMI
        &kp TAB    &kp A    &kp S    &kp D     &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L      &kp LBKT  &kp RBKT
        &kp LSHFT  &kp Z    &kp X    &kp C     &kp V     &kp B                       &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp BSLH
-       &kp LCTRL  &kp LWIN &lt 2 &mo 3  &kp SPACE &kp LALT                         &bspc_del &kp RET             &kp LANG1  &kp LANG2 &kp INT_MUHENKAN
+       &kp LCTRL  &lt 6 LWIN &to L_NUMPAD  &kp SPACE &kp LALT                         &bspc_del &kp RET             &kp LANG1  &kp LANG2 &kp INT_MUHENKAN
        &kp UP     &kp LEFT &kp DOWN &kp RIGHT &mkp MCLK                                       &none     &none     &none      &none     &none
                      >;
               };
@@ -74,8 +74,8 @@ As such, those are in use within the default layer at this time.*/
                      bindings = <
        &kp TILDE &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &kp CARET &kp AMPS &kp STAR  &kp LPAR  &kp RPAR                    &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &kp MINUS &kp EQUAL &trans    &trans    &trans                     &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &trans    &trans    &trans            &trans    &trans              &trans     &trans    &trans
+       &trans    &kp MINUS &kp EQUAL &trans   &trans    &trans                     &trans    &trans    &trans    &trans     &trans    &trans
+       &trans    &trans    &to L_DEFAULT      &trans    &trans                     &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
                     >;
               };
@@ -99,7 +99,7 @@ As such, those are in use within the default layer at this time.*/
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &mo L_LAYERCTL     &trans    &trans                      &trans    &trans              &trans     &trans    &trans
+       &trans    &trans    &to L_DEFAULT      &trans    &trans                      &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
                      >;
               };
@@ -111,7 +111,7 @@ As such, those are in use within the default layer at this time.*/
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &mo L_LAYERCTL      &trans    &trans                      &trans    &trans              &trans     &trans    &trans
+       &trans    &trans    &to L_DEFAULT       &trans    &trans                      &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
                      >;
               };
@@ -123,7 +123,7 @@ As such, those are in use within the default layer at this time.*/
        &sys_reset &bootloader &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
        &studio_unlock  &none  &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
        &bt BT_CLR_ALL  &none  &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
-       &none           &none  &mo L_LAYERCTL   &none    &none                    &none    &none             &none     &none    &none
+       &none           &none  &to L_DEFAULT    &none    &none                    &none    &none             &none     &none    &none
        &none           &none  &none   &none    &none                                      &none    &none    &none     &none    &none
                      >;
               };
