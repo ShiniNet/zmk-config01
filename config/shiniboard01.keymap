@@ -39,28 +39,24 @@ As such, those are in use within the default layer at this time.*/
        combos {
               compatible = "zmk,combos";
               combo_DEFAULT {
-                     timeout-ms = <50>;
+                     timeout-ms = <200>;
                      key-positions = <38 46>;
                      bindings = <&to L_DEFAULT>;
-                     slow-release;
               };
               combo_NUMPAD {
-                     timeout-ms = <50>;
+                     timeout-ms = <200>;
                      key-positions = <38 47>;
                      bindings = <&to L_MOUSE>;
-                     slow-release;
               };
               combo_MOUSE {
-                     timeout-ms = <50>;
+                     timeout-ms = <200>;
                      key-positions = <38 48>;
                      bindings = <&to L_LEFTPAD>;
-                     slow-release;
               };
               combo_SYSTEM {
-                     timeout-ms = <50>;
+                     timeout-ms = <200>;
                      key-positions = <38 49>;
                      bindings = <&to L_SYSTEM>;
-                     slow-release;
               };
        };
        // SHIFT+BS=DEL
