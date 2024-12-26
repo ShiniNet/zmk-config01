@@ -64,7 +64,7 @@ As such, those are in use within the default layer at this time.*/
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans             &trans    &trans                      &trans    &trans              &trans     &trans    &trans
-       &studio_unlock    &trans    &trans   &trans    &bt BT_CLR_ALL                                  &trans    &trans    &trans     &trans    &trans
+       &studio_unlock &sys_reset &bootloader &trans    &bt BT_CLR_ALL                                  &trans    &trans    &trans     &trans    &trans
                     >;
               };
               raise_layer {
