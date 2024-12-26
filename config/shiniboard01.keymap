@@ -14,9 +14,11 @@
 
  #define L_DEFAULT  0
  #define L_NUMPAD   1
- #define L_MOUSE    2
- #define L_LEFTPAD  3
- #define L_SYSTEM   4
+ #define L_FUNC     2
+ #define L_MOUSE    3
+ #define L_LEFTPAD  4
+ #define L_SYSTEM   5
+ #define L_LAYERCTL 6
 
  // Mouse Scroll Value
  #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
@@ -35,30 +37,7 @@ As such, those are in use within the default layer at this time.*/
                      tap-ms = <20>;
               };
        };
-       // Layer Controll
-       combos {
-              compatible = "zmk,combos";
-              combo_DEFAULT {
-                     timeout-ms = <200>;
-                     key-positions = <38 46>;
-                     bindings = <&to L_DEFAULT>;
-              };
-              combo_NUMPAD {
-                     timeout-ms = <200>;
-                     key-positions = <38 47>;
-                     bindings = <&to L_MOUSE>;
-              };
-              combo_MOUSE {
-                     timeout-ms = <200>;
-                     key-positions = <38 48>;
-                     bindings = <&to L_LEFTPAD>;
-              };
-              combo_SYSTEM {
-                     timeout-ms = <200>;
-                     key-positions = <38 49>;
-                     bindings = <&to L_SYSTEM>;
-              };
-       };
+       
        // SHIFT+BS=DEL
        bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
@@ -75,16 +54,16 @@ As such, those are in use within the default layer at this time.*/
                      display-name = "Default";
                      sensor-bindings = <&scroll_up_down>;
                      //sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
- // ---------------------------------------------------------------------------------------------------------------------------------
- // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
- // |  CTRL  |   A    |   S    |   D    |   F    |   G    |                      |   H    |   J    |   K    |   L    |   ;    |   '    |
- // |  SHIFT |   Z    |   X    |   C    |   V    |   B    |                      |   N    |   M    |   ,    |   .    |   /    |  RET   |
- // | ADJUST |  ESC   |  ALT   |  LGUI  | EISUU  | LOWER  |                      | RAISE  |  KANA  |  LEFT  |  DOWN  |  UP    |  RIGHT |
+       // ---------------------------------------------------------------------------------------------------------------------------------
+       // |  TAB   |   Q    |   W    |   E    |   R    |   T    |                      |   Y    |   U    |   I    |   O    |   P    |  BSPC  |
+       // |  CTRL  |   A    |   S    |   D    |   F    |   G    |                      |   H    |   J    |   K    |   L    |   ;    |   '    |
+       // |  SHIFT |   Z    |   X    |   C    |   V    |   B    |                      |   N    |   M    |   ,    |   .    |   /    |  RET   |
+       // | ADJUST |  ESC   |  ALT   |  LGUI  | EISUU  | LOWER  |                      | RAISE  |  KANA  |  LEFT  |  DOWN  |  UP    |  RIGHT |
                      bindings = <
        &kp ESC    &kp Q    &kp W    &kp E     &kp R     &kp T                       &kp Y     &kp U     &kp I     &kp O      &kp P     &kp SEMI
        &kp TAB    &kp A    &kp S    &kp D     &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L      &kp LBKT  &kp RBKT
        &kp LSHFT  &kp Z    &kp X    &kp C     &kp V     &kp B                       &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp BSLH
-       &kp LCTRL  &kp LWIN &mo L_NUMPAD         &kp SPACE &kp LALT                    &bspc_del &kp RET             &mo 2      &kp UP    &kp RIGHT
+       &kp LCTRL  &kp LWIN &lt L_LAYERCTL &to L_NUMPAD  &kp SPACE &kp LALT          &bspc_del &kp RET             &kp LANG1  &kp LANG2 &kp INT_MUHENKAN
        &kp UP     &kp LEFT &kp DOWN &kp RIGHT &mkp MCLK                                       &none     &none     &none      &none     &none
                      >;
               };
@@ -92,25 +71,35 @@ As such, those are in use within the default layer at this time.*/
               numpad_layer {
                      display-name = "numpad_layer";
                      sensor-bindings = <&scroll_up_down>;
- // ---------------------------------------------------------------------------------------------------------------------------------
+                     bindings = <
+       &kp TILDE &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                   &trans    &trans    &trans    &trans     &trans    &trans
+       &trans    &kp CARET &kp AMPS &kp STAR  &kp LPAR  &kp RPAR                    &trans    &trans    &trans    &trans     &trans    &trans
+       &trans    &kp MINUS &kp EQUAL &trans    &trans    &trans                     &trans    &trans    &trans    &trans     &trans    &trans
+       &trans    &trans    &lt L_LAYERCTL &to L_DEFAULT &trans    &trans            &trans    &trans              &trans     &trans    &trans
+       &trans    &trans    &trans   &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
+                    >;
+              };
+
+              func_layer {
+                     display-name = "func_layer";
+                     sensor-bindings = <&scroll_up_down>;
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans             &trans    &trans                      &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
-                    >;
+                     >;
               };
 
               mouse_layer {
                      display-name = "mouse_layer";
                      sensor-bindings = <&scroll_up_down>;
- // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &trans             &trans    &trans                      &trans    &trans              &trans     &trans    &trans
+       &trans    &trans    &mo L_LAYERCTL     &trans    &trans                      &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
                      >;
               };
@@ -118,13 +107,11 @@ As such, those are in use within the default layer at this time.*/
               leftpad_layer {
                      display-name = "leftpad_layer";
                      sensor-bindings = <&scroll_up_down>;
- // ---------------------------------------------------------------------------------------------------------------------------------
                      bindings = <
-       //&trans    &kp BTN_0 &kp BTN_1 &kp BTN_2 &kp BTN_3 &kp BTN_4                   &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &trans              &trans    &trans                      &trans    &trans              &trans     &trans    &trans
+       &trans    &trans    &mo L_LAYERCTL      &trans    &trans                      &trans    &trans              &trans     &trans    &trans
        &trans    &trans    &trans    &trans    &trans                                          &trans    &trans    &trans     &trans    &trans
                      >;
               };
@@ -132,13 +119,24 @@ As such, those are in use within the default layer at this time.*/
               system_layer {
                      display-name = "system_layer";
                      sensor-bindings = <&scroll_up_down>;
- // ---------------------------------------------------------------------------------------------------------------------------------
+                     bindings = <
+       &sys_reset &bootloader &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
+       &studio_unlock  &none  &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
+       &bt BT_CLR_ALL  &none  &none   &none    &none    &none                    &none    &none    &none    &none     &none    &none
+       &none           &none  &mo L_LAYERCTL   &none    &none                    &none    &none             &none     &none    &none
+       &none           &none  &none   &none    &none                                      &none    &none    &none     &none    &none
+                     >;
+              };
+              
+              layerctl_layer {
+                     display-name = "layerctl_layer";
+                     sensor-bindings = <&scroll_up_down>;
                      bindings = <
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
        &trans    &trans    &trans   &trans    &trans    &trans                      &trans    &trans    &trans    &trans     &trans    &trans
-       &trans    &trans    &trans             &trans    &trans                      &trans    &trans              &trans     &trans    &trans
-       &studio_unlock &sys_reset &bootloader &bt BT_CLR_ALL &trans                         &trans    &trans    &trans     &trans    &trans
+       &trans    &trans    &to L_DEFAULT      &trans    &trans                      &trans    &trans              &trans     &trans    &trans
+       &to L_MOUSE &to L_LEFTPAD &to L_SYSTEM &none     &to L_DEFAULT                         &trans    &trans    &trans     &trans    &trans
                      >;
               };
        };
