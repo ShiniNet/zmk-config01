@@ -12,11 +12,11 @@
  #include <dt-bindings/zmk/outputs.h>
  #include <dt-bindings/zmk/pointing.h>
 
- #define DEFAULT  0
- #define NUMPAD   1
- #define MOUSE    2
- #define LEFTPAD  3
- #define SYSTEM   4
+ #define L_DEFAULT  0
+ #define L_NUMPAD   1
+ #define L_MOUSE    2
+ #define L_LEFTPAD  3
+ #define L_SYSTEM   4
 
  // Mouse Scroll Value
  #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
@@ -41,22 +41,22 @@ As such, those are in use within the default layer at this time.*/
               combo_DEFAULT {
                      timeout-ms = <50>;
                      key-positions = <38 46>;
-                     bindings = <&to DEFAULT>;
+                     bindings = <&to L_DEFAULT>;
               };
               combo_NUMPAD {
                      timeout-ms = <50>;
                      key-positions = <38 47>;
-                     bindings = <&to MOUSE>;
+                     bindings = <&to L_MOUSE>;
               };
               combo_MOUSE {
                      timeout-ms = <50>;
                      key-positions = <38 48>;
-                     bindings = <&to LEFTPAD>;
+                     bindings = <&to L_LEFTPAD>;
               };
               combo_MOUSE {
                      timeout-ms = <50>;
                      key-positions = <38 49>;
-                     bindings = <&to SYSTEM>;
+                     bindings = <&to L_SYSTEM>;
               };
        };
        // SHIFT+BS=DEL
@@ -84,7 +84,7 @@ As such, those are in use within the default layer at this time.*/
        &kp ESC    &kp Q    &kp W    &kp E     &kp R     &kp T                       &kp Y     &kp U     &kp I     &kp O      &kp P     &kp SEMI
        &kp TAB    &kp A    &kp S    &kp D     &kp F     &kp G                       &kp H     &kp J     &kp K     &kp L      &kp LBKT  &kp RBKT
        &kp LSHFT  &kp Z    &kp X    &kp C     &kp V     &kp B                       &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp BSLH
-       &kp LCTRL  &kp LWIN &mo NUMPAD         &kp SPACE &kp LALT                    &bspc_del &kp RET             &mo 2      &kp UP    &kp RIGHT
+       &kp LCTRL  &kp LWIN &mo L_NUMPAD         &kp SPACE &kp LALT                    &bspc_del &kp RET             &mo 2      &kp UP    &kp RIGHT
        &kp UP     &kp LEFT &kp DOWN &kp RIGHT &mkp MCLK                                       &none     &none     &none      &none     &none
                      >;
               };
