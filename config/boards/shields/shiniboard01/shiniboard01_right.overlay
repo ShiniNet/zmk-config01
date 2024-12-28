@@ -5,6 +5,7 @@
  */
 
 #include "shiniboard01.dtsi"
+#include "common.dtsi"
 
 &default_transform {
     col-offset = <6>;
