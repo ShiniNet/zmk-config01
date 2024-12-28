@@ -72,7 +72,7 @@
 &pro_micro_i2c {
     status = "okay";
     
-    glidepoint: glidepoint@0 {
+    glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "disabled";
