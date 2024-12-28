@@ -5,6 +5,7 @@
  */
 
 #include "shiniboard01.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -30,7 +31,7 @@
         reg = <0x2a>;
         status = "okay";
         // The aforementioned LED data pin that we're not using, hand wired to cirque DR
-        dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
+        dr-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
         sleep;
