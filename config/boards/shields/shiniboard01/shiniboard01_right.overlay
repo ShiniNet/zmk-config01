@@ -5,7 +5,6 @@
  */
 
 #include "shiniboard01.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -26,7 +25,7 @@
 &pro_micro_i2c {
     status = "okay";
     
-    glidepoint: glidepoint@2a {
+    glidepoint: glidepoint@0 {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
         status = "okay";
@@ -39,12 +38,9 @@
 };
 
 / {
-    glidepoint_input {
+    glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-
-        xy-swap;
-        y-invert;
-        x-invert;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
