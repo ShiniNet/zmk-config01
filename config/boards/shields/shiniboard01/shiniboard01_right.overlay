@@ -26,7 +26,7 @@
 
     glidepoint: glidepoint@0x2a {
         compatible = "cirque,pinnacle";
-        reg = <@0x2a>;
+        reg = <0x2a>;
         status = "okay";
         dr-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH)>;
 
