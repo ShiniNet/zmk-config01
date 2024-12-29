@@ -5,6 +5,8 @@
  */
 
 #include "shiniboard01.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
