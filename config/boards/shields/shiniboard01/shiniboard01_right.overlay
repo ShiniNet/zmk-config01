@@ -23,3 +23,6 @@
         ;
 };
 
+&glidepoint_listener {
+    status = "okay";  // リスナーを有効化
+};
