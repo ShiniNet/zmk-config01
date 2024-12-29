@@ -58,16 +58,6 @@
         triggers-per-rotation = <30>;
     };
 
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0x2a {
-            compatible = "zmk,input-split";
-            reg = <0x2a>;
-        };
-    };
-
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         status = "disabled";  // 中央側では後で有効化する
