@@ -1,7 +1,7 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SHINIBOARD01_LEFT
+if SHIELD_SHINIBOARD01_RIGHT
 
 config ZMK_KEYBOARD_NAME
     default "SHINIBOARD01"
