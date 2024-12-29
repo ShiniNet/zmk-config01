@@ -62,9 +62,9 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        glidepoint_split: glidepoint_split@0 {
+        glidepoint_split: glidepoint_split@0x2a {
             compatible = "zmk,input-split";
-            reg = <0>;
+            reg = <0x2a>;
         };
     };
 

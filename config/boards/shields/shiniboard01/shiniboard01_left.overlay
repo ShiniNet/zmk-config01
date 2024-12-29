@@ -21,22 +21,6 @@
     status = "okay";
 };
 
-
-&pro_micro_i2c {
-    status = "okay";
-
-    glidepoint: glidepoint@0x2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
-        sleep;
-    };
-};
-
-&glidepoint_split {
-    device = <&glidepoint>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+&glidepoint_listener {
+    status = "okay";  // リスナーを有効化
 };
