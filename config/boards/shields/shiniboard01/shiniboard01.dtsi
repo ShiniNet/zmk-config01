@@ -75,7 +75,7 @@
     glidepoint: glidepoint@2a {
         compatible = "cirque,pinnacle";
         reg = <0x2a>;
-        status = "enabled";
+        status = "disabled";
         // The aforementioned LED data pin that we're not using, hand wired to cirque DR
         dr-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH)>;
 
