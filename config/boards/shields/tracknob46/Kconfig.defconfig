@@ -20,6 +20,3 @@ endif
 
 config I2C
     default y
-
-config PINNACLE
-    default y 
