@@ -78,6 +78,7 @@
 
     glidepoint_listener {
         compatible = "zmk,input-listener";
+        status = "okay";
         device = <&glidepoint>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
