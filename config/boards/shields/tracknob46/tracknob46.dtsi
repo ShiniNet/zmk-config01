@@ -5,12 +5,12 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "shiniboard01-layouts.dtsi"
+#include "tracknob46-layouts.dtsi"
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,physical-layout = &shiniboard01_physical_layout;
+        zmk,physical-layout = &tracknob46_physical_layout;
         transform = <&default_transform>;
 //        zmk,matrix_transform = &default_transform;
         

@@ -1,17 +1,17 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SHINIBOARD01_LEFT
+if SHIELD_TRACKNOB46_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "SHINIBOARD01"
+    default "tracknob46"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_SHINIBOARD01_LEFT || SHIELD_SHINIBOARD01_RIGHT
+if SHIELD_TRACKNOB46_LEFT || SHIELD_TRACKNOB46_RIGHT
 
 config ZMK_SPLIT
     default y
