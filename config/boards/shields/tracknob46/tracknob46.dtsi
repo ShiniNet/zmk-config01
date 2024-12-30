@@ -59,7 +59,7 @@
         triggers-per-rotation = <30>;
     };
 
-    /*split_inputs {
+    split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
 
@@ -69,31 +69,4 @@
         };
     };
 
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint_split>;
-    };*/
-
-    glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-    };
-
-};
-
-&pro_micro_i2c {
-    status = "okay";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&gpio1 6 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
-        sleep;
-    };
 };
