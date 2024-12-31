@@ -21,9 +21,6 @@
     status = "okay";
 };
 
-/ {
-    glidepoint_input_listener: glidepoint_input {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint_split>;
-    };
+&glidepoint_input_listener {
+    status = "okay";
 };
