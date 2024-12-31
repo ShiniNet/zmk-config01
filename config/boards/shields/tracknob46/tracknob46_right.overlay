@@ -32,7 +32,7 @@
 
         sensitivity = "4x";
         #sleep;
-        no-taps;
+        #no-taps;
     };
 };
 /*
