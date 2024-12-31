@@ -50,7 +50,7 @@
         
         wheelie {
 		    layers = <1>;
-		    input-processors = <&mouse_to_wheel_mapper>;
+		    input-processors = <&zip_xy_to_scroll_mapper>;
 	    };
 
     };
