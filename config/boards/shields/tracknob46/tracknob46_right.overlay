@@ -31,14 +31,14 @@
         dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
-        #sleep;
+        sleep; 
         #no-taps;
     };
 };
 /*
 &glidepoint_split {
     device = <&glidepoint>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 2000>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 2 1>, <&zip_temp_layer 3 2000>;
 };*/
 
 / {
@@ -46,6 +46,6 @@
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
 
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_temp_layer 3 2000>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 2 1>, <&zip_temp_layer 3 2000>;
     };
 };
