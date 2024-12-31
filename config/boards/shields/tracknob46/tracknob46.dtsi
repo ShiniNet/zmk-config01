@@ -59,7 +59,7 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <30>;
     };
-
+/*
 	split_inputs {
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -69,6 +69,7 @@
 			reg = <0>;
 		};
 	};
+*/
 };
 
 &pro_micro_i2c {

@@ -34,9 +34,20 @@
         sleep;
     };
 };
+/*
 &glidepoint_split {
     device = <&glidepoint>;
     // Input processors that are run before event data is sent
     // to the central. Mostly useful for orientation fix ups.
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+};
+*/
+
+/ {
+    glidepoint_input_listener: glidepoint_input {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+
+        // input-processors = <&xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT) &xy_scaler 3 2>;
+    };
 };
