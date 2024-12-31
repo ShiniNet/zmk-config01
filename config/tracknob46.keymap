@@ -75,10 +75,10 @@
 &kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp SEMI  &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp LBKT  &kp RBKT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp BSLH  &kp LCTRL  &lt L_LAYERCTL LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1  &bspc_del  &kp RET  &kp LANG1  &kp LANG2  &bt BT_CLR_ALL  &kp UP  &kp LEFT  &kp DOWN  &kp RIGHT 
             >;
         };
-
+/*
         numpad_layer {
             display-name = "numpad_layer";
-//            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 &kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &kp MINUS  &kp EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
             >;
@@ -86,7 +86,7 @@
 
         func_layer {
             display-name = "func_layer";
-//            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans
             >;
@@ -94,7 +94,7 @@
 
         mouse_layer {
             display-name = "mouse_layer";
-//            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &none  &none  &trans  &trans  &to L_DEFAULT  &trans  &trans  &mkp MB4  &mkp MB5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
@@ -102,7 +102,7 @@
 
         leftpad_layer {
             display-name = "leftpad_layer";
-//           sensor-bindings = <&scroll_up_down>;
+           sensor-bindings = <&scroll_up_down>;
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
@@ -110,7 +110,7 @@
 
         system_layer {
             display-name = "system_layer";
-//            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 &sys_reset  &bootloader  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &to L_DEFAULT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             >;
@@ -118,10 +118,11 @@
 
         layerctl_layer {
             display-name = "layerctl_layer";
-//            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>;
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to L_MOUSE  &to L_LEFTPAD  &to L_SYSTEM  &none  &to L_DEFAULT
             >;
         };
+        */
     };
 };
