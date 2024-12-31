@@ -11,6 +11,7 @@
 
 / {
     chosen {
+        zephyr,display = &oled;
         zmk,kscan = &kscan0;
         //zmk,physical-layout = &tracknob46_physical_layout;
         zmk,matrix_transform = &default_transform;
