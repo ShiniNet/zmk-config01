@@ -72,7 +72,7 @@
             display-name = "Default";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp SEMI  &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp LBKT  &kp RBKT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp BSLH  &kp LCTRL  &lt L_LAYERCTL LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1  &bspc_del  &kp RET  &kp LANG1  &kp LANG2  &kp INT_MUHENKAN  &kp UP  &kp LEFT  &kp DOWN  &kp RIGHT  &mkp MCLK
+&kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp MINUS  &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp LBKT  &kp RBKT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp BSLH  &kp LCTRL  &lt L_LAYERCTL LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1  &bspc_del  &kp RET  &kp LANG1  &kp LANG2  &kp INT_MUHENKAN  &kp UP  &kp LEFT  &kp DOWN  &kp RIGHT  &mkp MCLK
             >;
         };
 
@@ -80,7 +80,7 @@
             display-name = "numpad_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &kp MINUS  &kp EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
+&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &kp SEMICOLON  &kp EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
