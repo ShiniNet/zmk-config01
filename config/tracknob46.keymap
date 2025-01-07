@@ -22,6 +22,10 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
+&mt {
+    flavor = "tap-preferred";
+};
+
 / {
     behaviors {
         // Mouse Scroll
@@ -64,9 +68,6 @@
             label = "BCSP_DEL";
         };
         
-        &mt {
-            flavor = "tap-preferred";
-        };
     };
 
     keymap {
