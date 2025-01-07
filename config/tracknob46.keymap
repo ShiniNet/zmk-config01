@@ -63,6 +63,10 @@
             keep-mods = <(MOD_RSFT)>;
             label = "BCSP_DEL";
         };
+        
+        &mt {
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
