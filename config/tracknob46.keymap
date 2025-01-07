@@ -80,7 +80,7 @@
             display-name = "sub_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &kp SEMICOLON  &kp EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
+&kp TILDE  &mt NUMBER_1 F1  &mt NUMBER_2 F2  &mt NUMBER_3 F3  &mt NUMBER_4 F4  &mt NUMBER_5 F5  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &mt NUMBER_6 F6  &mt NUMBER_7 F7  &mt NUMBER_8 F8  &mt NUMBER_9 F9  &mt NUMBER_0 F10  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &mt SEMICOLON F11  &mt EQUAL F12  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
