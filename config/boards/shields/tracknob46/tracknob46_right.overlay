@@ -35,11 +35,6 @@
         no-taps;
     };
 };
-/*
-&glidepoint_split {
-    device = <&glidepoint>;
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 2>, <&zip_temp_layer 3 1000>;
-};*/
 
 / {
     glidepoint_input_listener: glidepoint_input {
@@ -53,7 +48,7 @@
 		    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 1>, <&zip_temp_layer 3 1000>;
 	    };
         scroller {
-		    layers = <4>;
+		    layers = <3>;
 		    input-processors = <&zip_xy_scaler 1 4>,<&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
 	    };
 

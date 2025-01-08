@@ -12,19 +12,18 @@
 
 #define L_DEFAULT  0
 #define L_NUMPAD   1
-#define L_FUNC     2
-#define L_MOUSE    3
-#define L_LEFTPAD  4
-#define L_SYSTEM   5
-#define L_LAYERCTL 6
+#define L_MOUSE    2
+#define L_LEFTPAD  3
+#define L_SYSTEM   4
+#define L_LAYERCTL 5
 
 // Mouse Scroll Value
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-&mt {
-    flavor = "tap-preferred";
-};
+// change Mod-Tap flavor
+
+&mt { flavor = "tap-preferred"; };
 
 / {
     behaviors {
@@ -67,7 +66,6 @@
             keep-mods = <(MOD_RSFT)>;
             label = "BCSP_DEL";
         };
-        
     };
 
     keymap {
@@ -77,7 +75,7 @@
             display-name = "Default";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp MINUS  &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp LBKT  &kp RBKT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp BSLH  &kp LCTRL  &lt L_LAYERCTL LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1  &bspc_del  &kp RET  &kp LANG1  &kp LANG2  &kp INT4  &kp UP  &kp LEFT  &kp DOWN  &kp RIGHT  &mkp MCLK
+&kp ESC  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp MINUS  &kp TAB  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp LBKT  &kp RBKT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp PERIOD  &kp SLASH  &kp BSLH  &kp LCTRL  &lt 5 LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1  &bspc_del  &kp RET  &kp LANG1  &kp LANG2  &kp INT4  &kp UP  &kp LEFT  &kp DOWN  &kp RIGHT  &mkp MCLK
             >;
         };
 
@@ -85,15 +83,7 @@
             display-name = "sub_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp TILDE  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 NUMBER_5  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &mt F6 NUMBER_6  &mt F7 NUMBER_7  &mt F8 NUMBER_8  &mt F9 NUMBER_9  &mt F10 NUMBER_0  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &mt F11 SEMICOLON  &mt F12 EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &mo 2  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to L_DEFAULT  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        func_layer {
-            display-name = "func_layer";
-            sensor-bindings = <&scroll_up_down>;
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F7  &kp F8  &kp F9  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F10  &kp F11  &kp F12  &trans  &trans  &trans  &trans  &trans
+&kp TILDE  &mt F1 NUMBER_1  &mt F2 NUMBER_2  &mt F3 NUMBER_3  &mt F4 NUMBER_4  &mt F5 NUMBER_5  &kp PAGE_UP  &kp PRINTSCREEN  &kp SLASH  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &trans  &mt F6 NUMBER_6  &mt F7 NUMBER_7  &mt F8 NUMBER_8  &mt F9 NUMBER_9  &mt F10 NUMBER_0  &kp HOME  &kp END  &kp ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &trans  &mt F11 SEMICOLON  &mt F12 EQUAL  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans  &kp PAGE_DOWN  &kp DEL  &none  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans  &trans  &to 0  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &dot_comma  &pls_minus  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -101,7 +91,7 @@
             display-name = "mouse_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 4  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &mkp MB4  &mkp MB5  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &none  &none  &none  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 3  &none  &trans  &trans  &trans  &trans  &trans  &trans  &none  &mkp MB4  &mkp MB5  &none  &none  &none  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -117,7 +107,7 @@
             display-name = "system_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&sys_reset  &bootloader  &none  &none  &none  &none  &none  &none  &none  &none  &bootloader  &sys_reset  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &none  &none  &to L_DEFAULT  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&sys_reset  &bootloader  &none  &none  &none  &none  &none  &none  &none  &none  &bootloader  &sys_reset  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &none  &none  &to 0  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
             >;
         };
 
@@ -125,7 +115,7 @@
             display-name = "layerctl_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to L_SYSTEM  &none  &to L_DEFAULT
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 4  &none  &to 0
             >;
         };
     };
