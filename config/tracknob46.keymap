@@ -13,12 +13,26 @@
 #define L_DEFAULT  0
 #define L_NUMPAD   1
 #define L_MOUSE    2
-#define L_LEFTPAD  3
+#define L_MOUSE_SCROLL  3
 #define L_SYSTEM   4
 
 // Mouse Scroll Value
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
+&glidepoint_input_listener{
+
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 500>;
+    
+    lowspeedmode {
+        layers = <L_NUMPAD>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 500>;
+    };
+    scroller {
+        layers = <L_MOUSE_SCROLL>;
+        input-processors = <&zip_scroll_scaler 1 2>,<&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+    };
+};
 
 / {
     behaviors {
