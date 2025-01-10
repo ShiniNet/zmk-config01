@@ -21,6 +21,6 @@
     status = "okay";
 };
 
-&glidepoint_input_listener {
+&glidepoint_listener  {
     status = "okay";
 };
