@@ -20,7 +20,7 @@
 &left_encoder {
     status = "okay";
 };
-/*
+
 &glidepoint_input_listener {
     status = "okay";
-};*/
+};
