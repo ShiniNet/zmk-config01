@@ -36,6 +36,21 @@
     };
 };
 
+&glidepoint_split {
+    device = <&glidepoint>;
+
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 500>;
+    
+    lowspeedmode {
+        layers = <L_NUMPAD>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 500>;
+    };
+    scroller {
+        layers = <L_MOUSE_SCROLL>;
+        input-processors = <&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_scroll_scaler 1 6>;
+    };
+};
+
 / {
     input_processors {
         // add scroll scaler
@@ -48,18 +63,4 @@
         };
     };
 
-    &glidepoint_split {
-        device = <&glidepoint>;
-
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 500>;
-        
-        lowspeedmode {
-            layers = <L_NUMPAD>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 500>;
-        };
-        scroller {
-            layers = <L_MOUSE_SCROLL>;
-            input-processors = <&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_scroll_scaler 1 6>;
-        };
-    };
 };
