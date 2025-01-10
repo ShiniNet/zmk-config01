@@ -60,16 +60,7 @@
         triggers-per-rotation = <30>;
     };
     
-    input_processors {
-        // add scroll scaler
-        zip_scroll_scaler: zip_scroll_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
-            track-remainders;
-        };
-    };
+    /* If you want the left side to be central, uncomment it.
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
@@ -78,11 +69,11 @@
             compatible = "zmk,input-split";
             reg = <0>;
         };
-    };
+    };*/
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
-        status = "okay";
-        device = <&glidepoint_split>;
+        status = "disabled";
+        device = <&glidepoint>;
     };
 };
 
@@ -91,6 +82,7 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
+        status = "disabled";
         reg = <0x3c>;
         width = <128>;
         height = <32>;
@@ -103,5 +95,16 @@
         com-sequential;
         inversion-on;
         prechargep = <0x22>;
+    };
+
+    glidepoint: glidepoint@2a {
+        compatible = "cirque,pinnacle";
+        reg = <0x2a>;
+        status = "disabled";
+        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+
+        sensitivity = "4x";
+        //sleep; 
+        no-taps;
     };
 };

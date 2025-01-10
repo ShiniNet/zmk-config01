@@ -21,33 +21,16 @@
         ;
 };
 
-&pro_micro_i2c {
+&glidepoint  {
     status = "okay";
-
-    glidepoint: glidepoint@2a {
-        compatible = "cirque,pinnacle";
-        reg = <0x2a>;
-        status = "okay";
-        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "4x";
-        //sleep; 
-        no-taps;
-    };
 };
 
+&glidepoint_listener {// If you want the left side to be central, comment it out.
+    status = "okay";
+};
+
+/* If you want the left side to be central, uncomment it.
 &glidepoint_split {
-    status = "okay";
     device = <&glidepoint>;
-
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer 2 500>;
-    
-    lowspeedmode {
-        layers = <1>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer 2 500>;
-    };
-    scroller {
-        layers = <3>;
-        input-processors = <&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_scroll_scaler 1 6>;
-    };
 };
+*/
