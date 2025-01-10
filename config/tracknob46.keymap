@@ -21,22 +21,23 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
-// TrackPad Layer CTL
-&glidepoint_input {
-
-    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 500>;
-    
-    lowspeedmode {
-        layers = <L_NUMPAD>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 500>;
-    };
-    scroller {
-        layers = <L_MOUSE_SCROLL>;
-        input-processors = <&zip_scroll_scaler 1 2>,<&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
-    };
-};
 
 / {
+    // TrackPad Layer CTL
+    glidepoint_input_listener: glidepoint_input {
+        compatible = "zmk,input-listener";
+
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 500>;
+        
+        lowspeedmode {
+            layers = <L_NUMPAD>;
+            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 500>;
+        };
+        scroller {
+            layers = <L_MOUSE_SCROLL>;
+            input-processors = <&zip_scroll_scaler 1 2>,<&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>;
+        };
+    };
 
     behaviors {
         // Mouse Scroll
