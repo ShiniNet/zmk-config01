@@ -23,6 +23,16 @@
 
 
 / {
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+    
     // TrackPad Layer CTL
     glidepoint_input_listener: glidepoint_input {
         compatible = "zmk,input-listener";
