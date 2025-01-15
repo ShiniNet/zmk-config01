@@ -73,7 +73,7 @@
         dot_comma: dot_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COMMA>;
+            bindings = <&kp KP_DOT>, <&kp COMMA>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
