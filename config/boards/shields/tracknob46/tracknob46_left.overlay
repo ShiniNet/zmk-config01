@@ -20,8 +20,3 @@
 &left_encoder {
     status = "okay";
 };
-/* If you want the left side to be central, uncomment it.
-&glidepoint_listener  {
-    status = "okay";
-    device = <&glidepoint_split>;
-};*/

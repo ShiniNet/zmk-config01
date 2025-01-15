@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
 
 #define L_DEFAULT  0
 #define L_NUMPAD   1
@@ -18,25 +18,38 @@
 #define L_SYSTEM   4
 
 // Mouse Scroll Value
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // cirque trackpad input&layer control
+
 &glidepoint_listener {
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 2>, <&zip_temp_layer L_MOUSE 700>;
-    
-        lowspeedmode {
-            layers = <L_NUMPAD>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 3 4>, <&zip_temp_layer L_MOUSE 700>;
-        };
-        scroller {
-            layers = <L_SCROLL>;
-            input-processors = <&zip_xy_to_scroll_mapper>,<&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,<&zip_scroll_scaler 1 6>;
-        };
+    input-processors =
+        <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+        <&zip_xy_scaler 3 2>,
+        <&zip_temp_layer L_MOUSE 700>;
+
+    lowspeedmode {
+        layers = <L_NUMPAD>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_xy_scaler 3 4>,
+            <&zip_temp_layer L_MOUSE 700>;
+    };
+
+    scroller {
+        layers = <L_SCROLL>;
+        input-processors =
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_scroll_scaler 1 6>;
+    };
 };
 
 / {
     input_processors {
         // add scroll scaler
+
         zip_scroll_scaler: zip_scroll_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
@@ -48,6 +61,7 @@
 
     behaviors {
         // Encoder to Mouse Scroll
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -136,7 +150,7 @@
             display-name = "system_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&sys_reset  &bootloader  &none  &none  &none  &none  &none  &none  &none  &none  &bootloader  &sys_reset  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &bt BT_NXT  &bt BT_PRV  &none  &none  &none  &none  &none  &none  &bt BT_PRV  &bt BT_NXT  &bt BT_CLR_ALL  &none  &none  &none  &none  &to 0  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&sys_reset  &bootloader  &none  &none  &none  &none  &none  &none  &none  &none  &bootloader  &sys_reset  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &bt BT_CLR_ALL  &bt BT_SEL 1  &bt BT_SEL 1  &bt BT_SEL 2  &none  &none  &none  &none  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR_ALL  &out OUT_USB  &out OUT_BLE  &none  &none  &to 0  &none  &none  &none  &out OUT_BLE  &out OUT_USB  &none  &none  &none  &none  &none
             >;
         };
     };
