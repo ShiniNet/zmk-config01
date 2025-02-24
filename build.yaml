@@ -24,4 +24,4 @@ include:
 #    - board: nice_nano_v2
 #      shield: tracknob46_right
     - board: nice_nano_v2
-      shield: corne_left
+      shield: corne2_left
