@@ -4,7 +4,7 @@
 
 / {
     chosen {
-        zmk,kscan = &mock_kscan;
+        zmk,kscan = &kscan0;
         zmk,physical-layout = &lalapad_physical_layout;
     };
 
@@ -21,7 +21,7 @@
         >;
     };
 
-    mock_kscan: mock_kscan_0 {
+    kscan0: mock_kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
