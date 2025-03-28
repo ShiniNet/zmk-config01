@@ -1,9 +1,11 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
+#include "lalapad-layouts.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &lalapad_physical_layout;
     };
 
     default_transform: keymap_transform_0 {
