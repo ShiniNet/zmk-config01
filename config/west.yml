@@ -16,7 +16,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Add this:
     - name: ShiniNet
       url-base: https://github.com/ShiniNet/
     - name: caksoylar 
