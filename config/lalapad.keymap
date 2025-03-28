@@ -172,7 +172,7 @@
         };
 
         SECONDARY_LAYER {
-            display-name = "numpad_layer";
+            display-name = "secondary_layer";
             sensor-bindings = <&scroll_left_right>,<&scroll_left_right>;
             bindings = <
 &kp TILDE  &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4   &kp NUMBER_5   &kp PAGE_UP     &kp PRINTSCREEN  &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
@@ -218,7 +218,7 @@
         };
 
         SCROLL_R_LAYER {
-            display-name = "right_mouse_scroll_layer";
+            display-name = "right_scroll_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -240,7 +240,7 @@
         };
 
         SCROLL_L_LAYER {
-            display-name = "right_mouse_scroll_layer";
+            display-name = "right_scroll_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
