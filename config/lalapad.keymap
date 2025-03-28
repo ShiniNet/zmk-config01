@@ -207,7 +207,7 @@
         };
 
         MOUSE_R_LAYER {
-            display-name = "right_mouse_layer";
+            display-name = "mouse_r_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans     &trans     &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo SCROLL_R_LAYER
@@ -218,7 +218,7 @@
         };
 
         SCROLL_R_LAYER {
-            display-name = "right_scroll_layer";
+            display-name = "scroll_r_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -229,7 +229,7 @@
         };
 
         MOUSE_L_LAYER {
-            display-name = "right_mouse_layer";
+            display-name = "mouse_l_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
 &mo SCROLL_R_LAYER  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -240,7 +240,7 @@
         };
 
         SCROLL_L_LAYER {
-            display-name = "right_scroll_layer";
+            display-name = "scroll_l_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
