@@ -3,7 +3,6 @@
 
 / {
     chosen {
-        zmk,physical-layout = &lalapad_physical_layout;
         zmk,kscan = &mock_kscan;
     };
 
