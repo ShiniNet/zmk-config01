@@ -1,0 +1,29 @@
+#include "lalapad.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+&kscan0 {
+    col-gpios
+        = <&xiao_d 9 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&glidepoint_listener_R {
+    status = "okay";
+    device = <&glidepoint_split_R>;
+};
+
+&glidepoint_listener_L {
+    status = "okay";
+    device = <&glidepoint_split_L>;
+};

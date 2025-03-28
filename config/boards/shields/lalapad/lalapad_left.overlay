@@ -1,0 +1,28 @@
+#include "lalapad.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&shifter 5 GPIO_ACTIVE_HIGH>
+        , <&shifter 4 GPIO_ACTIVE_HIGH>
+        , <&shifter 3 GPIO_ACTIVE_HIGH>
+        , <&shifter 2 GPIO_ACTIVE_HIGH>
+        , <&shifter 1 GPIO_ACTIVE_HIGH>
+        , <&shifter 0 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&left_encoder {
+    a-gpios = <&xiao_d 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    steps = <24>;
+    status = "okay";
+};
+
+&glidepoint_split_L {
+    status = "okay";
+    device = <&glidepoint>;
+};
+&glidepoint_split_R {
+    status = "disabled";
+    device = <&glidepoint>;
+};
