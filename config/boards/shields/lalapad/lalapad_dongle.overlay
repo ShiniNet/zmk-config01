@@ -22,7 +22,6 @@
     status = "okay";
     device = <&glidepoint_split_R>;
 };
-
 &glidepoint_listener_L {
     status = "okay";
     device = <&glidepoint_split_L>;

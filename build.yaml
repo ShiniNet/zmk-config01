@@ -27,10 +27,10 @@ include:
 #      shield: corne2_left
   - board: seeeduino_xiao_ble
     shield: lalapad_right rgbled_adapter
-    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: lalapad_left rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: lalapad_dongle rgbled_adapter
   - board: seeeduino_xiao_ble
+    snippet: studio-rpc-usb-uart
     shield: settings_reset
