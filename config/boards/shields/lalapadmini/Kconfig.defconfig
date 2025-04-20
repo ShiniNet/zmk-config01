@@ -1,0 +1,22 @@
+if SHIELD_LALAPADMINI_RIGHT
+
+config ZMK_KEYBOARD_NAME
+    default "Lalapadmini"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1
+    
+config BT_MAX_CONN
+    default 5
+
+endif
+
+if SHIELD_LALAPADMINI_LEFT || SHIELD_LALAPADMINI_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
