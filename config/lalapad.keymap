@@ -180,12 +180,12 @@
 
         Click_L {
             bindings = <&mkp LCLK>;
-            key-positions = <39 40>;
+            key-positions = <20 21>;
         };
 
         Click_R {
             bindings = <&mkp RCLK>;
-            key-positions = <43 44>;
+            key-positions = <22 21>;
         };
     };
 
