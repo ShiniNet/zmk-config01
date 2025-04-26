@@ -21,7 +21,7 @@
     status = "okay";
 };
 
-&glidepoint_split_R {
+&glidepoint_listener_R {
     status = "okay";
     device = <&glidepoint>;
 };
