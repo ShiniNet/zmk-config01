@@ -178,7 +178,7 @@
     combos {
         compatible = "zmk,combos";
 
-        Click_R {
+        Click_L {
             bindings = <&mkp LCLK>;
             key-positions = <39 40>;
         };
