@@ -187,6 +187,11 @@
             bindings = <&mkp RCLK>;
             key-positions = <22 21>;
         };
+
+        CLICK_M {
+            bindings = <&mkp MCLK>;
+            key-positions = <20 22>;
+        };
     };
 
     keymap {
