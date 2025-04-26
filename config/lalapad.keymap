@@ -175,6 +175,20 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        Click_R {
+            bindings = <&mkp LCLK>;
+            key-positions = <39 40>;
+        };
+
+        Click_R {
+            bindings = <&mkp RCLK>;
+            key-positions = <43 44>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
