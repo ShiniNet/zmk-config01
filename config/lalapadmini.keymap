@@ -110,60 +110,6 @@
             tap-ms = <20>;
         };
 
-        dot_comma: dot_comma {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp KP_DOT>, <&kp COMMA>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "DOT_COMMA";
-        };
-
-        pls_minus: pls_minus {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PLUS>, <&kp MINUS>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            label = "PLS_MINUS";
-        };
-
-        allow_pageup: allow_pageup {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp UP>, <&kp PAGE_UP>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            label = "ALLOW_PAGEUP";
-        };
-
-        allow_pagedown: allow_pagedown {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            label = "ALLOW_PAGEDOWN";
-        };
-
-        allow_home: allow_home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp HOME>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            label = "ALLOW_HOME";
-        };
-
-        allow_end: allow_end {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp END>;
-
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-            label = "ALLOW_END";
-        };
-
         mt2: mod_tap2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -201,6 +147,11 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+
+        pure_space {
+            bindings = <&kp SPACE>;
+            key-positions = <32 33>;
+        };
     };
 
     keymap {
@@ -214,7 +165,7 @@
 &kp Q             &kp W         &kp E  &kp R               &kp T  &kp Y            &kp U      &kp I      &kp O                    &kp P
 &kp A             &kp S         &kp D  &kp F               &kp G  &kp H            &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C  &kp V               &kp B  &kp N            &kp M      &kp COMMA  &kp PERIOD               &mt2 BACKSLASH SLASH
-&kp LCTRL         &kp LEFT_WIN         &tapdance_altSpace  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &kp LANGUAGE_1
+&kp LCTRL         &kp LEFT_WIN         &mt LEFT_ALT SPACE  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &kp LANGUAGE_1
             >;
         };
 
