@@ -173,6 +173,13 @@
             require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
+
+        tap_dance_layer_1and2: tap_dance_layer_1and2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_mo12";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 2>;
+        };
     };
 
     combos {
@@ -202,10 +209,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q           &kp W      &kp E  &kp R      &kp T  &kp Y          &kp U      &kp I      &kp O           &kp P
-&kp A           &kp S      &kp D  &kp F      &kp G  &kp H          &kp J      &kp K      &kp L           &mt EQUAL MINUS
-&kp Z           &kp X      &kp C  &kp V      &kp B  &kp N          &kp M      &kp COMMA  &kp PERIOD      &kp SLASH
-&kp LEFT_SHIFT  &kp LCTRL         &kp SPACE  &mo 1  &kp BACKSPACE  &kp ENTER             &kp LANGUAGE_1  &kp LANGUAGE_2
+&kp Q           &kp W      &kp E  &kp R      &kp T                   &kp Y          &kp U      &kp I      &kp O           &kp P
+&kp A           &kp S      &kp D  &kp F      &kp G                   &kp H          &kp J      &kp K      &kp L           &mt EQUAL MINUS
+&kp Z           &kp X      &kp C  &kp V      &kp B                   &kp N          &kp M      &kp COMMA  &kp PERIOD      &kp SLASH
+&kp LEFT_SHIFT  &kp LCTRL         &kp SPACE  &tap_dance_layer_1and2  &kp BACKSPACE  &kp ENTER             &kp LANGUAGE_1  &kp LANGUAGE_2
             >;
         };
 
