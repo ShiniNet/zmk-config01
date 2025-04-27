@@ -232,7 +232,7 @@
             display-name = "tertiary_layer";
             bindings = <
 &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans    &kp UP_ARROW  &trans
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &kp LEFT  &trans        &kp RIGHT
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT
 &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans    &kp DOWN      &trans
 &trans   &trans            &trans   &trans   &trans  &trans            &trans        &trans
             >;
