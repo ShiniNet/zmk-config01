@@ -199,6 +199,11 @@
             bindings = <&kp LEFT_WIN>;
             key-positions = <30 31>;
         };
+
+        ScreenShot {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <9 8>;
+        };
     };
 
     keymap {
@@ -222,8 +227,8 @@
 
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4      &kp N5             &kp PAGE_UP    &mt2 KP_SLASH KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&kp NUMBER_6  &kp N7        &kp N8         &kp N9            &kp N0             &kp HOME       &kp END                    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&kp GRAVE     &kp SQT       &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&kp NUMBER_6  &kp N7        &kp N8         &kp N9            &kp N0             &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&kp GRAVE     &kp SQT       &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HOME       &kp END                    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
 &trans        &trans                       &trans            &trans             &kp DELETE     &trans                                      &kp KP_NUMBER_0  &mt2 KP_DOT KP_COMMA
             >;
         };
