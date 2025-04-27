@@ -201,11 +201,6 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
-
-        CONBO_WIN {
-            bindings = <&kp LEFT_WIN>;
-            key-positions = <30 31>;
-        };
     };
 
     keymap {
@@ -216,10 +211,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q           &kp W      &kp E  &kp R               &kp T                   &kp Y          &kp U      &kp I      &kp O                    &kp P
-&kp A           &kp S      &kp D  &kp F               &kp G                   &kp H          &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
-&kp Z           &kp X      &kp C  &kp V               &kp B                   &kp N          &kp M      &kp COMMA  &kp PERIOD               &mt2 BACKSLASH SLASH
-&kp LEFT_SHIFT  &kp LCTRL         &tapdance_altSpace  &tap_dance_layer_1and2  &kp BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &kp LANGUAGE_1
+&kp Q             &kp W         &kp E  &kp R               &kp T  &kp Y            &kp U      &kp I      &kp O                    &kp P
+&kp A             &kp S         &kp D  &kp F               &kp G  &kp H            &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V               &kp B  &kp N            &kp M      &kp COMMA  &kp PERIOD               &mt2 BACKSLASH SLASH
+&kp LCTRL         &kp LEFT_WIN         &tapdance_altSpace  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &kp LANGUAGE_1
             >;
         };
 
@@ -228,20 +223,20 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp NUMBER_4      &kp N5             &kp KP_DIVIDE  &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&kp NUMBER_6  &kp N7        &kp N8         &kp N9            &kp N0             &none          &kp KP_MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&kp GRAVE     &kp SQT       &kp SEMICOLON  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none          &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans        &trans                       &trans            &trans             &kp DELETE     &trans                            &kp KP_NUMBER_0  &mt2 KP_DOT KP_COMMA
+&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_DIVIDE  &kp KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
+&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &none          &kp KP_MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&kp GRAVE         &kp SQT           &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none          &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&trans            &trans                              &trans            &trans             &kp DELETE     &trans                            &kp KP_NUMBER_0  &mt2 KP_DOT KP_COMMA
             >;
         };
 
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &kp PRINTSCREEN  &none          &none     &kp UP_ARROW  &none
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp HOME         &kp PAGE_UP    &kp LEFT  &kp DOWN      &kp RIGHT
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp END          &kp PAGE_DOWN  &none     &kp DOWN      &none
-&trans   &trans            &trans   &trans   &trans           &trans                   &trans        &trans
+&kp EXCLAMATION  &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PRINTSCREEN  &none          &none     &kp UP_ARROW  &none
+&kp LCTRL        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HOME         &kp PAGE_UP    &kp LEFT  &kp DOWN      &kp RIGHT
+&kp TILDE        &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp END          &kp PAGE_DOWN  &none     &kp DOWN      &none
+&trans           &trans                           &trans                &trans                 &trans           &trans                   &trans        &trans
             >;
         };
 
