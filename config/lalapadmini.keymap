@@ -221,10 +221,10 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp PAGE_UP    &mt2 KP_SLASH KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 NUMBER_0  &kp HOME       &kp END                    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&mt2 F11 Z        &mt2 F12 X        &trans            &trans            &trans             &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans            &kp LEFT_WIN                        &trans            &trans             &kp DELETE     &trans                                      &kp KP_NUMBER_0  &mt KP_DOT KP_COMMA
+&mt2 F1 NUMBER_1       &mt2 F2 NUMBER_2        &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5            &kp PAGE_UP    &mt2 KP_SLASH KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
+&mt2 F6 NUMBER_6       &mt2 F7 N7              &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 NUMBER_0     &kp HOME       &kp END                    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&mt2 F11 LEFT_BRACKET  &mt2 F12 RIGHT_BRACKET  &kp SEMICOLON     &kp SQT           &kp NON_US_BACKSLASH  &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&trans                 &kp LEFT_WIN                              &trans            &trans                &kp DELETE     &trans                                      &kp KP_NUMBER_0  &mt KP_DOT KP_COMMA
             >;
         };
 
