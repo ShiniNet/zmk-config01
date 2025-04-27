@@ -210,8 +210,8 @@
 
             bindings = <
 &kp Q           &kp W      &kp E  &kp R      &kp T                   &kp Y          &kp U      &kp I      &kp O           &kp P
-&kp A           &kp S      &kp D  &kp F      &kp G                   &kp H          &kp J      &kp K      &kp L           &mt EQUAL MINUS
-&kp Z           &kp X      &kp C  &kp V      &kp B                   &kp N          &kp M      &kp COMMA  &kp PERIOD      &kp SLASH
+&kp A           &kp S      &kp D  &kp F      &kp G                   &kp H          &kp J      &kp K      &kp L           &mt2 EQUAL MINUS
+&kp Z           &kp X      &kp C  &kp V      &kp B                   &kp N          &kp M      &kp COMMA  &kp PERIOD      &mt2 BACKSLASH SLASH
 &kp LEFT_SHIFT  &kp LCTRL         &kp SPACE  &tap_dance_layer_1and2  &kp BACKSPACE  &kp ENTER             &kp LANGUAGE_1  &kp LANGUAGE_2
             >;
         };
@@ -221,20 +221,20 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&mt2 F1 NUMBER_1       &mt2 F2 NUMBER_2        &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5            &kp PAGE_UP    &mt2 KP_SLASH KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&mt2 F6 NUMBER_6       &mt2 F7 N7              &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 NUMBER_0     &kp HOME       &kp END                    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&mt2 F11 LEFT_BRACKET  &mt2 F12 RIGHT_BRACKET  &kp SEMICOLON     &kp SQT           &kp NON_US_BACKSLASH  &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans                 &kp LEFT_WIN                              &trans            &trans                &kp DELETE     &trans                                      &kp KP_NUMBER_0  &mt KP_DOT KP_COMMA
+&kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3   &kp NUMBER_4  &kp N5     &kp PAGE_UP    &mt2 KP_SLASH KP_ASTERISK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
+&kp NUMBER_6      &kp N7             &kp N8         &kp N9        &kp N0     &kp HOME       &kp END                    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SEMICOLON  &kp SQT       &kp TILDE  &kp PAGE_DOWN  &mt2 KP_MINUS KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&trans            &kp LEFT_WIN                      &trans        &trans     &kp DELETE     &trans                                      &kp KP_NUMBER_0  &mt KP_DOT KP_COMMA
             >;
         };
 
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans  &trans  &trans
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &trans  &trans  &trans
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans
+&trans   &trans            &trans   &trans   &trans  &trans          &trans  &trans
             >;
         };
 
