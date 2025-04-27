@@ -186,7 +186,7 @@
             bindings = <
 &kp EXCLAMATION       &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PRINTSCREEN  &none          &none     &kp UP_ARROW  &none
 &kp CARET             &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp HOME         &kp PAGE_UP    &kp LEFT  &kp DOWN      &kp RIGHT
-&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp END          &kp PAGE_DOWN  &none     &kp DOWN      &none
+&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp END          &kp PAGE_DOWN  &none     &kp DOWN      &kp RSHIFT
 &trans                &trans                           &trans                &trans                 &trans           &trans                   &trans        &trans
             >;
         };
