@@ -186,6 +186,8 @@
 &kp TILDE        &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &none          &none     &none         &none      &none
 &trans           &trans                           &trans                &trans                 &trans         &trans                  &trans     &trans
             >;
+
+            sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
         };
 
         SYSTEM_LAYER {
