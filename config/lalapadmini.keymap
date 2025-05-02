@@ -66,6 +66,8 @@
     };
 };
 
+&mt { quick-tap-ms = <200>; };
+
 / {
     behaviors {
         // Encoder to Mouse Scroll
@@ -139,16 +141,6 @@
         COMBO_TAB {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
-        };
-
-        pure_space {
-            bindings = <&kp SPACE>;
-            key-positions = <32 33>;
-        };
-
-        pure_backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <34 35>;
         };
 
         COMBO_WIN {
