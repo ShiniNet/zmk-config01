@@ -142,7 +142,7 @@
 
         COMBO_TAB {
             bindings = <&kp TAB>;
-            key-positions = <10 11>;
+            key-positions = <0 10>;
         };
 
         COMBO_WIN {
