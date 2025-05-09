@@ -151,6 +151,15 @@
         };
     };
 
+    macros {
+        MACRO_LCLICK: MACRO_RCLICK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK>;
+            label = "MACRO_RCLICK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
