@@ -158,6 +158,13 @@
             bindings = <&mkp LCLK>;
             label = "MACRO_RCLICK";
         };
+
+        MACRO_TRANS: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&trans &to 0>;
+            label = "NEW_MACRO";
+        };
     };
 
     keymap {
@@ -214,10 +221,10 @@
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &mkp MCLK  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LCLICK  &mkp LCLK  &mkp RCLK  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4       &mkp MB5   &trans     &trans
-&trans  &trans          &trans  &trans  &trans  &trans                    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans         &mkp MCLK  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &MACRO_LCLICK  &mkp LCLK  &mkp RCLK  &mo 5
+&trans  &trans  &trans  &trans  &trans  &MACRO_TRANS  &mkp MB4       &mkp MB5   &trans     &trans
+&trans  &trans          &trans  &trans  &trans        &trans                    &trans     &trans
             >;
         };
 
