@@ -1,4 +1,3 @@
-
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -25,14 +24,14 @@
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 3 2>,
-        <&zip_temp_layer MOUSE_R_LAYER 300>;
+        <&zip_temp_layer MOUSE_R_LAYER 200>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 3 5>,
-            <&zip_temp_layer MOUSE_R_LAYER 300>;
+            <&zip_temp_layer MOUSE_R_LAYER 200>;
     };
 
     scroller {
@@ -48,14 +47,14 @@
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 3 2>,
-        <&zip_temp_layer MOUSE_L_LAYER 300>;
+        <&zip_temp_layer MOUSE_L_LAYER 200>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 3 4>,
-            <&zip_temp_layer MOUSE_L_LAYER 300>;
+            <&zip_temp_layer MOUSE_L_LAYER 200>;
     };
 
     scroller {
@@ -66,10 +65,6 @@
             <&zip_scroll_scaler 1 6>;
     };
 };
-
-&mt { quick-tap-ms = <200>; };
-
-&lt { quick-tap-ms = <200>; };
 
 / {
     behaviors {
@@ -115,6 +110,60 @@
             tap-ms = <20>;
         };
 
+        dot_comma: dot_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_DOT>, <&kp COMMA>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "DOT_COMMA";
+        };
+
+        pls_minus: pls_minus {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp MINUS>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            label = "PLS_MINUS";
+        };
+
+        allow_pageup: allow_pageup {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UP>, <&kp PAGE_UP>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            label = "ALLOW_PAGEUP";
+        };
+
+        allow_pagedown: allow_pagedown {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            label = "ALLOW_PAGEDOWN";
+        };
+
+        allow_home: allow_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            label = "ALLOW_HOME";
+        };
+
+        allow_end: allow_end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp END>;
+
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+            label = "ALLOW_END";
+        };
+
         mt2: mod_tap2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -124,40 +173,24 @@
             require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
-
-        tap_dance_layer_1and2: tap_dance_layer_1and2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_mo12";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        CONBO_ESC {
-            bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
-        };
-
-        COMBO_TAB {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-        };
-
-        COMBO_WIN {
-            bindings = <&kp LWIN>;
-            key-positions = <30 31>;
-        };
-    };
-
-    macros {
-        MACRO_LCLICK: MACRO_RCLICK {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
+        Click_L {
             bindings = <&mkp LCLK>;
-            label = "MACRO_RCLICK";
+            key-positions = <20 21>;
+        };
+
+        Click_R {
+            bindings = <&mkp RCLK>;
+            key-positions = <22 21>;
+        };
+
+        CLICK_M {
+            bindings = <&mkp MCLK>;
+            key-positions = <20 22>;
         };
     };
 
@@ -169,10 +202,11 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q             &kp W         &kp E  &kp R      &kp T  &kp Y            &kp U      &kp I      &kp O                    &kp P
-&kp A             &kp S         &kp D  &kp F      &kp G  &kp H            &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V      &kp B  &kp N            &kp M      &kp COMMA  &kp PERIOD               &mt RSHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT         &kp SPACE  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
+&kp ESC    &kp Q         &kp W         &kp E            &kp R                &mt2 Y T                  &kp Y                   &kp U          &kp I            &kp O       &kp P           &mt EQUAL MINUS
+&kp TAB    &kp A         &kp S         &kp D            &kp F                &mt2 H G                  &kp H                   &kp J          &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V                &mt2 N B                  &kp N                   &kp M          &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &kp BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE        &mo SECONDARY_LAYER  &lt TERTIARY_LAYER LANG2  &lt SYSTEM_LAYER LANG1  &kp BACKSPACE  &kp RET          &kp LEFT    &kp DOWN        &kp RIGHT
+                         &allow_end    &allow_pagedown  &allow_home          &allow_pageup             &allow_pageup           &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
@@ -181,23 +215,23 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
-&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
-&mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &kp KP_NUMLOCK   &kp KP_PLUS
+&kp TILDE  &mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 NUMBER_5   &kp PAGE_UP    &kp PRINTSCREEN  &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
+&trans     &mt2 F6 NUMBER_6  &mt2 F7 NUMBER_7  &mt2 F8 NUMBER_8  &mt2 F9 NUMBER_9  &mt2 F10 NUMBER_0  &kp HOME       &kp END          &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&trans     &mt2 F11 Z        &mt2 F12 X        &trans            &trans            &trans             &kp PAGE_DOWN  &kp KP_MINUS     &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&trans     &trans            &trans            &trans            &trans            &kp CAPS           &trans         &kp DELETE       &trans           &kp KP_NUMBER_0  &dot_comma       &kp KP_ENTER
+                             &trans            &trans            &trans            &trans             &trans         &trans           &trans           &trans
             >;
         };
 
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&kp EXCLAMATION       &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PAGE_UP    &kp HOME         &kp UP_ARROW    &kp END          &kp INSERT
-&kp CARET             &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN  &kp LEFT         &kp DOWN        &kp RIGHT        &none
-&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &kp RIGHT_SHIFT
-&trans                &trans                           &trans                &trans                 &trans         &trans                           &trans           &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans
+                 &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans
             >;
-
-            sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
         };
 
         SYSTEM_LAYER {
@@ -205,60 +239,56 @@
             sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
-&trans  &trans  &trans  &trans  &trans  &out OUT_USB  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans          &trans        &trans
-&trans  &trans          &trans  &trans  &trans        &trans                        &trans        &trans
+&trans  &trans  &trans  &trans  &trans       &trans      &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &bootloader  &sys_reset  &sys_reset    &bootloader   &studio_unlock  &bt BT_CLR    &bt BT_CLR_ALL  &trans
+&trans  &trans  &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans        &trans          &trans
+&trans  &trans  &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans        &trans          &trans
+                &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans
             >;
         };
 
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &mkp MCLK  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LCLICK  &mkp LCLK  &mkp RCLK  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4       &mkp MB5   &trans     &trans
-&trans  &trans          &trans  &trans  &trans  &trans                    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo SCROLL_R_LAYER
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
             >;
         };
 
         SCROLL_R_LAYER {
             display-name = "scroll_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         MOUSE_L_LAYER {
             display-name = "mouse_l_layer";
             bindings = <
-&trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&mo 7   &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &mkp MB4   &mkp MB5   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans                &trans     &trans  &trans  &trans          &trans  &trans
+&trans              &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&mo SCROLL_R_LAYER  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans              &trans     &mkp MB5   &mkp MB4   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans              &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                               &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         SCROLL_L_LAYER {
             display-name = "scroll_l_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        System_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
         };
     };
 };
