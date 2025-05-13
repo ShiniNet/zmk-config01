@@ -75,7 +75,8 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <20>;
+            tap-ms = <55>;
+            label = "SCROLL_UP_DOWN";
         };
 
         scroll_down_up: sensor_scroll_down_up {
@@ -84,6 +85,7 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
             tap-ms = <20>;
+            label = "SCROLL_DOWN_UP";
         };
 
         scroll_left_right: sensor_scroll_left_right {
@@ -92,6 +94,7 @@
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
             tap-ms = <20>;
+            label = "SCROLL_LEFT_RIGHT";
         };
 
         scroll_right_left: sensor_scroll_right_left {
@@ -100,6 +103,7 @@
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
             tap-ms = <20>;
+            label = "SCROLL_RIGHT_LEFT";
         };
 
         volume_up_down: sensor_volume_up_down {
@@ -108,6 +112,7 @@
             bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
 
             tap-ms = <20>;
+            label = "VOLUME_UP_DOWN";
         };
 
         dot_comma: dot_comma {
