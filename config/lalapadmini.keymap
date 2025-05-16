@@ -283,5 +283,10 @@
             if-layers = <2 4>;
             then-layer = <5>;
         };
+
+        sys {
+            if-layers = <4 3>;
+            then-layer = <5>;
+        };
     };
 };
