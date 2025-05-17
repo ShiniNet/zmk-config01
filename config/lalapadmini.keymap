@@ -6,9 +6,9 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT_LAYER   0
-#define SECONDARY_LAYER 1
-#define TERTIARY_LAYER  2
-#define SYSTEM_LAYER    3
+#define SECONDARY_LAYER 2
+#define TERTIARY_LAYER  4
+#define SYSTEM_LAYER    5
 #define MOUSE_R_LAYER   6
 #define SCROLL_R_LAYER  7
 #define MOUSE_L_LAYER   8
