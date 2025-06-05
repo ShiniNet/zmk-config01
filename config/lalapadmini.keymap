@@ -152,11 +152,11 @@
     };
 
     macros {
-        MACRO_LCLICK: MACRO_RCLICK {
+        MACRO_LTAP: MACRO_LTAP {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&mkp LCLK>;
-            label = "MACRO_RCLICK";
+            label = "MACRO_LTAP";
         };
     };
 
@@ -195,7 +195,7 @@
 &mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
 &mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
 &mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &kp KP_NUMLOCK   &kp KP_PLUS
+&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &none            &kp KP_PLUS
             >;
         };
 
@@ -205,7 +205,7 @@
 &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
 &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
 &trans  &trans  &trans  &trans  &trans  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans  &trans          &trans  &trans  &kp DELETE       &trans                            &kp KP_NUMLOCK   &kp KP_PLUS
+&trans  &trans          &trans  &trans  &kp DELETE       &trans                            &none            &kp KP_PLUS
             >;
 
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
@@ -214,10 +214,10 @@
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&kp EXCLAMATION       &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PAGE_UP    &kp HOME         &kp UP_ARROW    &kp END          &kp INSERT
-&kp CARET             &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN  &kp LEFT         &kp DOWN        &kp RIGHT        &none
-&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &kp RIGHT_SHIFT
-&trans                &trans                           &trans                &trans                 &trans         &trans                           &trans           &trans
+&kp EXCLAMATION       &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &kp PRINTSCREEN
+&kp CARET             &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT  &none
+&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &mkp MB4  &none         &mkp MB5   &kp RIGHT_SHIFT
+&trans                &trans                           &trans                &trans                 &trans         &trans                  &trans     &trans
             >;
 
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
@@ -225,23 +225,23 @@
 
         SYSTEM_LAYER {
             display-name = "system_layer";
-            sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
+            sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &out OUT_BLE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3
-&trans  &trans  &trans  &trans  &trans  &out OUT_USB  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &to 0         &to 1         &trans          &trans        &trans
-&trans  &trans          &trans  &trans  &trans        &trans                        &trans        &trans
+&trans  &trans  &trans  &trans       &trans  &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3
+&trans  &trans  &trans  &bootloader  &reset  &reset        &bootloader   &bt BT_CLR    &bt BT_CLR_ALL  &trans
+&trans  &trans  &trans  &trans       &trans  &to 0         &to 1         &trans        &trans          &trans
+&trans  &trans          &trans       &trans  &trans        &trans                      &trans          &trans
             >;
         };
 
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans         &mkp MCLK  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LCLICK  &mkp LCLK  &mkp RCLK  &mo 7
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4       &mkp MB5   &trans     &trans
-&trans  &trans          &trans  &trans  &trans  &trans                    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans       &mkp MCLK  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LTAP  &mkp LCLK  &mkp RCLK  &mo 7
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4     &none      &mkp MB5   &trans
+&trans  &trans          &trans  &trans  &trans  &trans                  &trans     &trans
             >;
         };
 
@@ -258,10 +258,10 @@
         MOUSE_L_LAYER {
             display-name = "mouse_l_layer";
             bindings = <
-&trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&mo 9   &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &mkp MB4   &mkp MB5   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans                &trans     &trans  &trans  &trans          &trans  &trans
+&trans  &trans       &mkp MCLK  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&mo 9   &MACRO_LTAP  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mkp MB4     &trans     &mkp MB5   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans                  &trans     &trans  &trans  &trans          &trans  &trans
             >;
         };
 
