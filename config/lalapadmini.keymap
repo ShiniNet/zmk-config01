@@ -14,7 +14,7 @@
 #define MOUSE_L_LAYER   8
 #define SCROLL_L_LAYER  9
 
-// Mouse Scroll Value testetesstestetetestestesssstttt
+// Mouse Scroll Value
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
