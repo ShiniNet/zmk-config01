@@ -71,8 +71,8 @@
 &lt { quick-tap-ms = <200>; };
 
 &mmv {
-    x-input-code = <200>;
-    y-input-code = <200>;
+    x-input-code = <32>;
+    y-input-code = <32>;
 };
 
 / {
