@@ -70,9 +70,6 @@
 
 &lt { quick-tap-ms = <200>; };
 
-&mmv {
-};
-
 / {
     behaviors {
         // Encoder to Mouse Scroll
