@@ -84,7 +84,7 @@
 &kp TAB    &kp A     &kp S         &kp D      &kp F     &kp G                          &kp H      &kp J             &kp K      &kp L       &mt2 EQUAL MINUS
 &kp LSHFT  &kp Z     &kp X         &kp C      &kp V     &kp B                          &kp N      &kp M             &kp COMMA  &kp PERIOD  &mt RSHIFT SLASH
 &kp LCTRL  &kp LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1     &kp LANGUAGE_2  &kp BACKSPACE  &kp ENTER  &lt 2 LANGUAGE_1  &kp LEFT   &kp DOWN    &kp RIGHT
-                     &kp UP_ARROW  &kp LEFT   &kp DOWN  &kp RIGHT       &kp UP         &kp LEFT   &kp DOWN          &kp RIGHT  &trans
+                     &kp RIGHT     &kp DOWN   &kp LEFT  &kp UP_ARROW    &kp UP         &kp LEFT   &kp DOWN          &kp RIGHT  &trans
             >;
         };
 
