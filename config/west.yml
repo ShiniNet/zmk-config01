@@ -32,6 +32,9 @@ manifest:
     - name: zmk-driver-iqs9151
       remote: ShiniNet
       revision: main
+    - name: zmk-easy-charge-indicator
+      remote: ShiniNet
+      revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
