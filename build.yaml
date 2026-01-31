@@ -25,22 +25,31 @@ include:
 #      shield: tracknob46_right
 #    - board: nice_nano_v2
 #      shield: corne2_left
-  - board: seeeduino_xiao_ble
-    shield: lalapad_right rgbled_adapter
-    snippet: studio-rpc-usb-uart
-  - board: seeeduino_xiao_ble
-    shield: lalapad_left rgbled_adapter
+#  - board: seeeduino_xiao_ble
+#    shield: lalapad_right rgbled_adapter
+#    snippet: studio-rpc-usb-uart
+#  - board: seeeduino_xiao_ble
+#    shield: lalapad_left rgbled_adapter
   #- board: seeeduino_xiao_ble
   #  shield: lalapad_dongle rgbled_adapter prospector_adapter
   #  snippet: studio-rpc-usb-uart
 #  - board: seeeduino_xiao_ble
 #    shield: settings_reset
 
-  - board: seeeduino_xiao_ble
-    shield: lalapadmini_right rgbled_adapter
+#  - board: seeeduino_xiao_ble
+#    shield: lalapadmini_right rgbled_adapter
+#    snippet: studio-rpc-usb-uart
+#  - board: seeeduino_xiao_ble
+#    shield: lalapadmini_left rgbled_adapter
+#    
+#  - board: seeeduino_xiao_ble
+#    shield: settings_reset
+
+  - board: seeeduino_xiao_ble # [xiao_ble] for Zephyr 4.1
+    shield: lalapadv2_right rgbled_adapter
     snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
-    shield: lalapadmini_left rgbled_adapter
-    
+    shield: lalapadv2_left rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: settings_reset

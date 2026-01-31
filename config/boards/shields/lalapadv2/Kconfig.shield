@@ -1,0 +1,5 @@
+config SHIELD_LALAPADV2_LEFT
+    def_bool $(shields_list_contains,lalapadv2_left)
+
+config SHIELD_LALAPADV2_RIGHT
+    def_bool $(shields_list_contains,lalapadv2_right)
