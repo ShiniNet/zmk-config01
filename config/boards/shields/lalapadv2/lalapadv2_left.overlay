@@ -26,42 +26,10 @@
 };
 
 &trackpad_split_L {
-    status = "okay";
-    device = <&glidepoint>;
+    status = "disabled";
+    device = <&iqs9151>;
 };
 &trackpad_split_R {
     status = "disabled";
-    device = <&glidepoint>;
-};
-
-// SPI
-&qspi {
-	status = "disabled";
-};
-&xiao_spi {
-    status = "okay";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>,<&gpio0 10 GPIO_ACTIVE_LOW>, <&gpio0 13 (GPIO_PULL_UP)>;//dummy
-
-    shifter: 595@0 {
-        compatible = "zmk,gpio-595";
-        status = "okay";
-        gpio-controller;
-        spi-max-frequency = <200000>;
-        reg = <0>;
-        #gpio-cells = <2>;
-        ngpios = <8>;
-    };
-    
-    glidepoint: glidepoint@1 {
-        compatible = "cirque,pinnacle";
-        status = "okay";
-        reg = <1>;
-        spi-max-frequency = <1000000>;
-        dr-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH)>;
-
-        sensitivity = "2x";
-        no-taps;
-        no-smoothing;
-        //absolute-mode;
-    };
+    device = <&iqs9151>;
 };
