@@ -92,7 +92,7 @@
             display-name = "secondary_layer";
             sensor-bindings = <&scroll_left_right>;
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5            &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5            &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
 &trans     &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0            &trans          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
 &kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
 &trans     &trans        &trans        &trans        &trans        &trans   &kp DEL  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
@@ -104,11 +104,11 @@
             display-name = "tertiary_layer";
             sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH       &kp DOLLAR            &kp PERCENT                    &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp END    &kp PRINTSCREEN
-&trans     &kp CARET        &kp AMPERSAND  &kp ASTERISK   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
-&trans     &kp GRAVE        &kp SQT        &kp SEMICOLON  &kp LEFT_BRACKET      &kp RIGHT_BRACKET              &kp BACKSLASH  &mkp MB4  &trans          &mkp MB5   &trans
-&trans     &trans           &trans         &trans         &trans                &trans                 &trans  &trans         &trans    &trans          &trans     &trans
-                            &trans         &trans         &trans                &trans                 &trans  &trans         &trans    &trans          &trans
+&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR            &kp PERCENT                    &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp END    &kp PRINTSCREEN
+&trans     &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans
+&trans     &trans           &trans         &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET              &trans         &mkp MB4  &trans          &mkp MB5   &trans
+&trans     &trans           &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans     &trans
+                            &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans
             >;
         };
 
