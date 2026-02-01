@@ -92,11 +92,11 @@
             display-name = "secondary_layer";
             sensor-bindings = <&scroll_left_right>;
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5           &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
-&trans     &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0           &trans          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10          &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
-&trans     &trans        &trans        &trans        &trans        &trans   &trans  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
-                         &trans        &trans        &trans        &trans   &trans  &trans          &trans           &trans           &trans
+&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5            &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&trans     &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0            &trans          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
+&kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
+&trans     &trans        &trans        &trans        &trans        &trans   &kp DEL  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
+                         &trans        &trans        &trans        &trans   &trans   &trans          &trans           &trans           &trans
             >;
         };
 
