@@ -5,6 +5,12 @@
 #include <input/processors.dtsi>
 #include "lalapadv2-layouts.dtsi"
 
+#define POS_TP_LEFT  54
+#define POS_TP_RIGHT 55
+#define POS_TP_UP    56
+#define POS_TP_DOWN  57
+#define POS_TP_PINCH 58
+
 / {
     chosen {
         zmk,physical-layout = &lalapadv2_physical_layout;
@@ -73,8 +79,14 @@
         compatible = "zmk,input-processor-behaviors";
         #input-processor-cells = <0>;
         type = <INPUT_EV_KEY>;
-        codes = <INPUT_KEY_LEFTCTRL>;
-        bindings = <&kp LCTRL>;
+        codes = <INPUT_KEY_F13 INPUT_KEY_F14 INPUT_KEY_F15 INPUT_KEY_F16 INPUT_KEY_F17>;
+        bindings = <
+                    &tp_to_pos  POS_TP_LEFT
+                    &tp_to_pos  POS_TP_RIGHT
+                    &tp_to_pos  POS_TP_UP
+                    &tp_to_pos  POS_TP_DOWN
+                    &tp_to_pos  POS_TP_PINCH
+                    >;
     };
 
     trackpad_listener_R: trackpad_listener_R {
