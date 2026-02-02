@@ -103,7 +103,7 @@
 &kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
 &trans     &trans        &trans        &trans        &trans        &trans   &kp DEL  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
                          &trans        &trans        &trans        &trans   &trans   &trans          &trans           &trans           &trans
-&none      &none         &none         &none         &none
+&trans     &trans        &trans        &trans        &trans
             >;
         };
 
@@ -116,7 +116,7 @@
 &trans     &trans           &trans         &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET              &trans         &mkp MB4  &trans          &mkp MB5   &trans
 &trans     &trans           &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans     &trans
                             &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans
-&none      &none            &none          &none         &none
+&trans     &trans        &trans        &trans        &trans
             >;
         };
 
@@ -129,7 +129,7 @@
 &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &trans        &trans        &trans        &trans          &trans
 &trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans        &trans        &trans        &trans          &trans
                  &trans   &trans   &trans   &trans   &trans  &trans        &trans        &trans        &trans
-&none   &none    &none    &none    &none
+&trans     &trans        &trans        &trans        &trans
             >;
         };
     };
