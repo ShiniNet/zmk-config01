@@ -90,7 +90,7 @@
 &kp LSHFT  &kp Z     &kp X         &kp C      &kp V     &kp B                          &kp N      &kp M             &kp COMMA      &kp PERIOD  &mt RSHIFT SLASH
 &kp LCTRL  &kp LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1     &kp LANGUAGE_2  &kp BACKSPACE  &kp ENTER  &lt 2 LANGUAGE_1  &kp SEMICOLON  &kp SQT     &mt RCTRL BACKSLASH
                      &kp RIGHT     &kp DOWN   &kp LEFT  &kp UP_ARROW    &kp UP         &kp LEFT   &kp DOWN          &kp RIGHT      &trans
-&mkp MB5   &mkp MB4  &kp A         &kp B      &kp C
+&mkp MB5   &mkp MB4  &kp LG(TAB)    &kp LG(D) &kp LCTRL
             >;
         };
 
