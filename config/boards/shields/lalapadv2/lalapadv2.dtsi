@@ -84,6 +84,12 @@
         input-processors = <&trackpad_key_behaviors>,
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>;
+        lowspeedmode {
+            layers = <1>,<2>;
+            input-processors =  <&trackpad_key_behaviors>,
+                                <&zip_xy_scaler 1 10>,
+                                <&zip_scroll_scaler 1 40>;
+        };
     };
     trackpad_listener_L: trackpad_listener_L {
         compatible = "zmk,input-listener";
@@ -92,8 +98,13 @@
         input-processors = <&trackpad_key_behaviors>,
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>;
+        lowspeedmode {
+            layers = <1>,<2>;
+            input-processors =  <&trackpad_key_behaviors>,
+                                <&zip_xy_scaler 1 10>,
+                                <&zip_scroll_scaler 1 40>;
+        };
     };
-
 };
 
 // TrackPad on I2C
