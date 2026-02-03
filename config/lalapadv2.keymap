@@ -25,7 +25,12 @@
 
         zip_dyn_scale: zip_dyn_scale {
             compatible = "zmk,behavior-zip-dynamic-scale";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
+        };
+
+        zip_dyn_scale_set: zip_dyn_scale_set {
+            compatible = "zmk,behavior-zip-dynamic-scale-set";
+            #binding-cells = <2>;
         };
 
         // Encoder to Mouse Scroll
@@ -133,8 +138,8 @@
             bindings = <
 &trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5           &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3
 &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10          &sys_reset    &bootloader   &bt BT_CLR    &bt BT_CLR_ALL  &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &zip_dyn_scale ZIP_DYNAMIC_SCALE_INC &zip_dyn_scale ZIP_DYNAMIC_SCALE_DEC &zip_dyn_scale ZIP_DYNAMIC_SCALE_RESET &trans &trans
-&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans        &trans        &trans        &trans          &trans
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &zip_dyn_scale ZDS_XY ZDS_INC &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC &zip_dyn_scale ZDS_SC ZDS_DEC &zip_dyn_scale ZDS_ALL ZDS_RST
+&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans        &trans        &zip_dyn_scale_set ZDS_XY 50  &zip_dyn_scale_set ZDS_XY 2 &zip_dyn_scale_set ZDS_XY 10
                  &trans   &trans   &trans   &trans   &trans  &trans        &trans        &trans        &trans
 &trans     &trans        &trans        &trans        &trans
             >;
