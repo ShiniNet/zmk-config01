@@ -81,7 +81,7 @@
     };
 
     trackpad_key_behaviors: trackpad_key_behaviors {
-        compatible = "zmk,input-processor-behaviors";
+        compatible = "zmk,input-processor-behaviors-consume";
         #input-processor-cells = <0>;
         type = <INPUT_EV_KEY>;
         codes = <
