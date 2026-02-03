@@ -88,6 +88,22 @@
                     &tp_to_pos  POS_TP_PINCH
                     >;
     };
+    
+    zip_dynamic_xy_scaler: zip_dynamic_xy_scaler {
+        compatible = "zmk,input-processor-dynamic-scaler";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_X INPUT_REL_Y>;
+        track-remainders;
+    };
+
+    zip_dynamic_scroll_scaler: zip_dynamic_scroll_scaler {
+        compatible = "zmk,input-processor-dynamic-scaler";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        track-remainders;
+    };
 
     trackpad_listener_R: trackpad_listener_R {
         compatible = "zmk,input-listener";
@@ -95,12 +111,16 @@
         device = <&trackpad_split_R>;
         input-processors = <&trackpad_key_behaviors>,
                            <&zip_xy_scaler 1 5>,
-                           <&zip_scroll_scaler 1 12>;
+                           <&zip_scroll_scaler 1 12>,
+                           <&zip_dynamic_xy_scaler>,
+                           <&zip_dynamic_scroll_scaler>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors>,
                                 <&zip_xy_scaler 1 10>,
-                                <&zip_scroll_scaler 1 40>;
+                                <&zip_scroll_scaler 1 40>,
+                                <&zip_dynamic_xy_scaler>,
+                                <&zip_dynamic_scroll_scaler>;
         };
     };
     trackpad_listener_L: trackpad_listener_L {
@@ -109,12 +129,16 @@
         device = <&trackpad_split_L>;
         input-processors = <&trackpad_key_behaviors>,
                            <&zip_xy_scaler 1 5>,
-                           <&zip_scroll_scaler 1 12>;
+                           <&zip_scroll_scaler 1 12>,
+                           <&zip_dynamic_xy_scaler>,
+                           <&zip_dynamic_scroll_scaler>;
         lowspeedmode {
             layers = <1>,<2>;
             input-processors =  <&trackpad_key_behaviors>,
                                 <&zip_xy_scaler 1 10>,
-                                <&zip_scroll_scaler 1 40>;
+                                <&zip_scroll_scaler 1 40>,
+                                <&zip_dynamic_xy_scaler>,
+                                <&zip_dynamic_scroll_scaler>;
         };
     };
 };
