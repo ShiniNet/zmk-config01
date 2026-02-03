@@ -102,6 +102,7 @@
 &kp LSHFT  &kp Z     &kp X         &kp C      &kp V     &kp B                          &kp N      &kp M             &kp COMMA      &kp PERIOD  &mt RSHIFT SLASH
 &kp LCTRL  &kp LWIN  &kp LEFT_ALT  &kp SPACE  &mo 1     &kp LANGUAGE_2  &kp BACKSPACE  &kp ENTER  &lt 2 LANGUAGE_1  &kp SEMICOLON  &kp SQT     &mt RCTRL BACKSLASH
                      &kp RIGHT     &kp DOWN   &kp LEFT  &kp UP_ARROW    &kp UP         &kp LEFT   &kp DOWN          &kp RIGHT      &trans
+&mkp LCLK  &mkp RCLK  &mkp MCLK
 &mkp MB5   &mkp MB4  &kp LG(TAB)    &kp LG(D) &kp LCTRL
             >;
         };
@@ -115,6 +116,7 @@
 &kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
 &trans     &trans        &trans        &trans        &trans        &trans   &kp DEL  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
                          &trans        &trans        &trans        &trans   &trans   &trans          &trans           &trans           &trans
+&trans     &trans        &trans
 &trans     &trans        &trans        &trans        &trans
             >;
         };
@@ -128,6 +130,7 @@
 &trans     &trans           &trans         &trans        &kp LEFT_BRACKET      &kp RIGHT_BRACKET              &trans         &mkp MB4  &trans          &mkp MB5   &trans
 &trans     &trans           &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans     &trans
                             &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans
+&trans     &trans        &trans
 &trans     &trans        &trans        &trans        &trans
             >;
         };
@@ -141,6 +144,7 @@
 &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &zip_dyn_scale ZDS_XY ZDS_INC &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC &zip_dyn_scale ZDS_SC ZDS_DEC &zip_dyn_scale ZDS_ALL ZDS_RST
 &trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans        &trans        &zip_dyn_scale_set ZDS_XY 50  &zip_dyn_scale_set ZDS_XY 2 &zip_dyn_scale_set ZDS_XY 10
                  &trans   &trans   &trans   &trans   &trans  &trans        &trans        &trans        &trans
+&trans     &trans        &trans
 &trans     &trans        &trans        &trans        &trans
             >;
         };
