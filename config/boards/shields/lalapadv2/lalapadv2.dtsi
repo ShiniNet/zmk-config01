@@ -6,23 +6,23 @@
 #include <input/processors.dtsi>
 #include "lalapadv2-layouts.dtsi"
 
-#define POS_TP_LCLK_R  52
-#define POS_TP_RCLK_R  53
-#define POS_TP_MCLK_R  54
-#define POS_TP_LEFT_R  58
-#define POS_TP_RIGHT_R 59
-#define POS_TP_UP_R    60
-#define POS_TP_DOWN_R  61
-#define POS_TP_PINCH_R 62
+#define POS_TP_LCLK_L  52
+#define POS_TP_RCLK_L  53
+#define POS_TP_MCLK_L  54
+#define POS_TP_LEFT_L  58
+#define POS_TP_RIGHT_L 59
+#define POS_TP_UP_L    60
+#define POS_TP_DOWN_L  61
+#define POS_TP_PINCH_L 62
 
-#define POS_TP_LCLK_L  55
-#define POS_TP_RCLK_L  56
-#define POS_TP_MCLK_L  57
-#define POS_TP_LEFT_L  63
-#define POS_TP_RIGHT_L 64
-#define POS_TP_UP_L    65
-#define POS_TP_DOWN_L  66
-#define POS_TP_PINCH_L 67
+#define POS_TP_LCLK_R  55
+#define POS_TP_RCLK_R  56
+#define POS_TP_MCLK_R  57
+#define POS_TP_LEFT_R  63
+#define POS_TP_RIGHT_R 64
+#define POS_TP_UP_R    65
+#define POS_TP_DOWN_R  66
+#define POS_TP_PINCH_R 67
 
 / {
     chosen {
@@ -216,10 +216,10 @@
 &xiao_i2c {
 status = "okay";
 
-iqs9151: iqs9151@56 {
-    compatible = "azoteq,iqs9151";
-    reg = <0x56>;
-    status = "okay";
-    irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-};
+    iqs9151: iqs9151@56 {
+        compatible = "azoteq,iqs9151";
+        reg = <0x56>;
+        status = "okay";
+        irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
 };
