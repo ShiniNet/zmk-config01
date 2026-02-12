@@ -6,14 +6,23 @@
 #include <input/processors.dtsi>
 #include "lalapadv2-layouts.dtsi"
 
-#define POS_TP_LCLK  54
-#define POS_TP_RCLK  55
-#define POS_TP_MCLK  56
-#define POS_TP_LEFT  57
-#define POS_TP_RIGHT 58
-#define POS_TP_UP    59
-#define POS_TP_DOWN  60
-#define POS_TP_PINCH 61
+#define POS_TP_LCLK_R  52
+#define POS_TP_RCLK_R  53
+#define POS_TP_MCLK_R  54
+#define POS_TP_LEFT_R  58
+#define POS_TP_RIGHT_R 59
+#define POS_TP_UP_R    60
+#define POS_TP_DOWN_R  61
+#define POS_TP_PINCH_R 62
+
+#define POS_TP_LCLK_L  55
+#define POS_TP_RCLK_L  56
+#define POS_TP_MCLK_L  57
+#define POS_TP_LEFT_L  63
+#define POS_TP_RIGHT_L 64
+#define POS_TP_UP_L    65
+#define POS_TP_DOWN_L  66
+#define POS_TP_PINCH_L 67
 
 / {
     chosen {
@@ -25,13 +34,13 @@
         columns = <12>;
         rows = <7>;
         map = <
-            RC(0,0)	RC(0,1)	RC(0,2)	RC(0,3)	RC(0,4)	RC(0,5)		    RC(0,7)	RC(0,8)	RC(0,9)	RC(0,10) RC(0,11)
-            RC(1,0)	RC(1,1)	RC(1,2)	RC(1,3)	RC(1,4)	RC(1,5)		    RC(1,7)	RC(1,8)	RC(1,9)	RC(1,10) RC(1,11)
-            RC(2,0)	RC(2,1)	RC(2,2)	RC(2,3)	RC(2,4)	RC(2,5)		    RC(2,7)	RC(2,8)	RC(2,9)	RC(2,10) RC(2,11)
+            RC(0,0)	RC(0,1)	RC(0,2)	RC(0,3)	RC(0,4)	        	    RC(0,7)	RC(0,8)	RC(0,9)	RC(0,10) RC(0,11)
+            RC(1,0)	RC(1,1)	RC(1,2)	RC(1,3)	RC(1,4)	       		    RC(1,7)	RC(1,8)	RC(1,9)	RC(1,10) RC(1,11)
+            RC(2,0)	RC(2,1)	RC(2,2)	RC(2,3)	RC(2,4)	       		    RC(2,7)	RC(2,8)	RC(2,9)	RC(2,10) RC(2,11)
             RC(3,0)	RC(3,1)	RC(3,2)	RC(3,3)	RC(3,4)	RC(3,5)	RC(3,6)	RC(3,7)	RC(3,8)	RC(3,9)	RC(3,10) RC(3,11)
-                            RC(4,2)	RC(4,3)	RC(4,4)	RC(4,5)	RC(4,6)	RC(4,7)	RC(4,8)	RC(4,9)	RC(4,10)	
-            RC(5,0)	RC(5,1) RC(5,2)
-            RC(6,0)	RC(6,1) RC(6,2)	RC(6,3)	RC(6,4)
+                    RC(4,1) RC(4,2)	RC(4,3)	RC(4,4)	RC(4,5)	RC(4,6)	RC(4,7)	RC(4,8)	RC(4,9)	RC(4,10)	
+            RC(5,0)	RC(5,1) RC(5,2)                                                 RC(5,9)	RC(5,10) RC(5,11)
+            RC(6,0)	RC(6,1) RC(6,2)	RC(6,3)	RC(6,4)                 RC(6,7)	RC(6,8) RC(6,9)	RC(6,10) RC(6,11)
         >;
     };
 
@@ -47,17 +56,6 @@
             , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1  1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
-    };
-
-    // Encoders
-    left_encoder: left_encoder {
-        compatible = "alps,ec11";
-        status = "disabled";
-    };
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
-        triggers-per-rotation = <10>;
     };
 
     // Input Listners
@@ -80,7 +78,7 @@
         };
     };
 
-    trackpad_key_behaviors: trackpad_key_behaviors {
+    trackpad_key_behaviors_R: trackpad_key_behaviors_R {
         compatible = "zmk,input-processor-behaviors-consume";
         #input-processor-cells = <0>;
         type = <INPUT_EV_KEY>;
@@ -95,14 +93,39 @@
                     INPUT_BTN_7
                     >;
         bindings = <
-                    &tp_to_pos  POS_TP_LCLK
-                    &tp_to_pos  POS_TP_RCLK
-                    &tp_to_pos  POS_TP_MCLK
-                    &tp_to_pos  POS_TP_LEFT
-                    &tp_to_pos  POS_TP_RIGHT
-                    &tp_to_pos  POS_TP_UP
-                    &tp_to_pos  POS_TP_DOWN
-                    &tp_to_pos  POS_TP_PINCH
+                    &tp_to_pos  POS_TP_LCLK_R
+                    &tp_to_pos  POS_TP_RCLK_R
+                    &tp_to_pos  POS_TP_MCLK_R
+                    &tp_to_pos  POS_TP_LEFT_R
+                    &tp_to_pos  POS_TP_RIGHT_R
+                    &tp_to_pos  POS_TP_UP_R
+                    &tp_to_pos  POS_TP_DOWN_R
+                    &tp_to_pos  POS_TP_PINCH_R
+                    >;
+    };
+    trackpad_key_behaviors_L: trackpad_key_behaviors_L {
+        compatible = "zmk,input-processor-behaviors-consume";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_KEY>;
+        codes = <
+                    INPUT_BTN_0
+                    INPUT_BTN_1
+                    INPUT_BTN_2
+                    INPUT_BTN_3
+                    INPUT_BTN_4
+                    INPUT_BTN_5 
+                    INPUT_BTN_6
+                    INPUT_BTN_7
+                    >;
+        bindings = <
+                    &tp_to_pos  POS_TP_LCLK_L
+                    &tp_to_pos  POS_TP_RCLK_L
+                    &tp_to_pos  POS_TP_MCLK_L
+                    &tp_to_pos  POS_TP_LEFT_L
+                    &tp_to_pos  POS_TP_RIGHT_L
+                    &tp_to_pos  POS_TP_UP_L
+                    &tp_to_pos  POS_TP_DOWN_L
+                    &tp_to_pos  POS_TP_PINCH_L
                     >;
     };
     
@@ -128,14 +151,14 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackpad_split_R>;
-        input-processors = <&trackpad_key_behaviors>,
+        input-processors = <&trackpad_key_behaviors_R>,
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
                            <&zip_dynamic_scroll_scaler>;
         lowspeedmode {
             layers = <1>,<2>;
-            input-processors =  <&trackpad_key_behaviors>,
+            input-processors =  <&trackpad_key_behaviors_R>,
                                 <&zip_xy_scaler 1 10>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
@@ -146,32 +169,57 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackpad_split_L>;
-        input-processors = <&trackpad_key_behaviors>,
+        input-processors = <&trackpad_key_behaviors_L>,
                            <&zip_xy_scaler 1 5>,
                            <&zip_scroll_scaler 1 12>,
                            <&zip_dynamic_xy_scaler>,
                            <&zip_dynamic_scroll_scaler>;
         lowspeedmode {
             layers = <1>,<2>;
-            input-processors =  <&trackpad_key_behaviors>,
+            input-processors =  <&trackpad_key_behaviors_L>,
                                 <&zip_xy_scaler 1 10>,
                                 <&zip_scroll_scaler 1 40>,
                                 <&zip_dynamic_xy_scaler>,
                                 <&zip_dynamic_scroll_scaler>;
         };
     };
+
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        status = "okay";
+        led0: led_0 {
+            gpios = <&gpio1 3 GPIO_ACTIVE_LOW>;  // red LED, connected to P1.03
+        };
+        led1: led_1 {
+            gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;  // green LED, connected to P1.05
+        };
+        led2: led_2 {
+            gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;  // blue LED, connected to P1.07
+        };
+    };
+    
+    easy_charge_indicator: easy_charge_indicator {
+        compatible = "zmk,easy-charge-indicator";
+        status = "okay";
+        charge-gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+        led-gpios = <&gpio0 10 (GPIO_ACTIVE_LOW | GPIO_OPEN_DRAIN)>;
+   };
 };
 
 // TrackPad on I2C
 &xiao_i2c {
+status = "okay";
+
+iqs9151: iqs9151@56 {
+    compatible = "azoteq,iqs9151";
+    reg = <0x56>;
     status = "okay";
-
-    iqs9151: iqs9151@56 {
-        compatible = "azoteq,iqs9151";
-        reg = <0x56>;
-        status = "okay";
-        irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        reset-gpios = <&xiao_d 10 GPIO_ACTIVE_LOW>;
-
-    };
+    irq-gpios = <&xiao_d 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+};
 };

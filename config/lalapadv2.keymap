@@ -34,26 +34,6 @@
             #binding-cells = <2>;
         };
 
-        // Encoder to Mouse Scroll
-
-        scroll_up_down: sensor_scroll_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-            tap-ms = <20>;
-            label = "SCROLL_UP_DOWN";
-        };
-
-        scroll_left_right: sensor_scroll_left_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-
-            tap-ms = <20>;
-            label = "SCROLL_LEFT_RIGHT";
-        };
-
         mt2: mod_tap2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -96,58 +76,54 @@
 
         DEFAULT_LAYER {
             display-name = "Default";
-            sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp ESC    &kp Q      &kp W         &kp E      &kp R      &kp T                          &kp Y      &kp U     &kp I           &kp O           &kp P
-&kp TAB    &kp A      &kp S         &kp D      &kp F      &kp G                          &kp H      &kp J     &kp K           &kp L           &mt2 EQUAL MINUS
-&kp LSHFT  &kp Z      &kp X         &kp C      &kp V      &kp B                          &kp N      &kp M     &kp COMMA       &kp PERIOD      &kp SLASH
+&kp Q      &kp W         &kp E      &kp R      &kp T                                     &kp Y      &kp U     &kp I           &kp O           &kp P
+&kp A      &kp S         &kp D      &kp F      &kp G                                     &kp H      &kp J     &kp K           &kp L           &mt2 EQUAL MINUS
+&kp Z      &kp X         &kp C      &kp V      &kp B                                     &kp N      &kp M     &kp COMMA       &kp PERIOD      &kp SLASH
 &kp LCTRL  &kp LWIN   &kp LEFT_ALT  &kp SPACE  &mo 1      &kp LANGUAGE_2  &kp BACKSPACE  &kp ENTER  &mo 2     &kp LANGUAGE_2  &kp LANGUAGE_1  &kp BACKSLASH
-                      &kp RIGHT     &kp DOWN   &kp LEFT   &kp UP_ARROW    &kp UP         &kp LEFT   &kp DOWN  &kp RIGHT       &trans
-&mkp LCLK  &mkp RCLK  &mkp MCLK
-&mkp MB5   &mkp MB4   &kp LG(TAB)   &kp LG(D)  &kp LCTRL
+           &trans     &kp RIGHT     &kp DOWN   &kp LEFT   &kp UP          &kp UP         &kp LEFT   &kp DOWN  &kp RIGHT       &trans
+&mkp LCLK  &mkp RCLK  &mkp MCLK                                                                               &mkp LCLK       &mkp RCLK       &mkp MCLK
+&mkp MB5   &mkp MB4   &kp LG(TAB)   &kp LG(D)  &kp LCTRL                                 &mkp MB5   &mkp MB4  &kp LG(TAB)     &kp LG(D)       &kp LCTRL
             >;
         };
 
         SECONDARY_LAYER {
             display-name = "secondary_layer";
-            sensor-bindings = <&scroll_left_right>;
             bindings = <
-&kp GRAVE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5            &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
-&trans     &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0            &trans          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
-&kp F2     &kp F6        &kp F7        &kp F8        &kp F9        &kp F10           &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                       &kp KP_NUMLOCK  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_PLUS
+&kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0                       &trans          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS
+&kp F6        &kp F7        &kp F8        &kp F9        &kp F10                      &trans          &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ASTERISK
 &trans     &trans        &trans        &trans        &trans        &trans   &kp DEL  &trans          &trans           &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_DIVIDE
-                         &trans        &trans        &trans        &trans   &trans   &trans          &trans           &trans           &trans
-&trans     &trans        &trans
-&trans     &trans        &trans        &trans        &trans
+           &trans        &trans        &trans        &trans        &trans   &trans   &trans          &trans           &trans           &trans
+&trans     &trans        &trans                                                                                       &trans           &trans           &trans
+&trans     &trans        &trans        &trans        &trans                          &trans          &trans           &trans           &trans           &trans
             >;
         };
 
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
-            sensor-bindings = <&scroll_up_down>;
             bindings = <
-&kp TILDE  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR            &kp PERCENT                    &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp END    &kp PRINTSCREEN
-&trans     &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK
-&trans     &kp GRAVE        &kp SQT        &kp SEMI      &kp LEFT_BRACKET      &kp RIGHT_BRACKET              &kp INS        &mkp MB4  &trans          &mkp MB5   &kp PAUSE_BREAK
+&kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR            &kp PERCENT                               &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp END    &kp PRINTSCREEN
+&kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS                     &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &kp SCROLLLOCK
+&kp GRAVE        &kp SQT        &kp SEMI      &kp LEFT_BRACKET      &kp RIGHT_BRACKET                         &kp INS        &mkp MB4  &trans          &mkp MB5   &kp PAUSE_BREAK
 &trans     &trans           &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans     &trans
-                            &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans
-&trans     &trans           &trans
-&trans     &trans           &trans         &trans        &trans
+           &trans           &trans         &trans        &trans                &trans                 &trans  &trans         &trans    &trans          &trans
+&trans     &trans        &trans                                                                                                        &trans          &trans     &trans
+&trans     &trans        &trans        &trans        &trans                                                   &trans         &trans    &trans          &trans     &trans
             >;
         };
 
         SYSTEM_LAYER {
             display-name = "system_layer";
-            sensor-bindings = <&scroll_up_down>;
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5           &out OUT_TOG                   &bt BT_SEL 0                   &bt BT_SEL 1                   &bt BT_SEL 2                   &bt BT_SEL 3
-&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10          &sys_reset                     &bootloader                    &bt BT_CLR                     &bt BT_CLR_ALL                 &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15          &zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST
+&kp F1   &kp F2   &kp F3   &kp F4   &kp F5                   &out OUT_TOG                   &bt BT_SEL 0                   &bt BT_SEL 1                   &bt BT_SEL 2                   &bt BT_SEL 3
+&kp F6   &kp F7   &kp F8   &kp F9   &kp F10                  &sys_reset                     &bootloader                    &bt BT_CLR                     &bt BT_CLR_ALL                 &trans
+&kp F11  &kp F12  &kp F13  &kp F14  &kp F15                  &zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST
 &trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans                         &trans                         &zip_dyn_scale_set ZDS_XY 50   &zip_dyn_scale_set ZDS_XY 2    &zip_dyn_scale_set ZDS_XY 10
-                 &trans   &trans   &trans   &trans   &trans  &trans                         &trans                         &trans                         &trans
-&trans  &trans   &trans
-&trans  &trans   &trans   &trans   &trans
-            >;
+        &trans   &trans   &trans   &trans   &trans   &trans  &trans                         &trans                         &trans                         &trans
+&trans  &trans   &trans                                                                                                    &trans                         &trans                         &trans
+&trans  &trans   &trans   &trans   &trans                    &trans                         &trans                         &trans                         &trans                         &trans 
+            >; 
         };
     };
 
