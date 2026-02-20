@@ -64,11 +64,6 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
-
-        COMBO_WIN {
-            bindings = <&kp LWIN>;
-            key-positions = <30 31>;
-        };
     };
 
     keymap {
