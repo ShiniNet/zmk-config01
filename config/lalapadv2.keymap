@@ -78,7 +78,7 @@
 &kp LCTRL          &kp LWIN   &kp LEFT_ALT  &mo 1      &kp SPACE  &kp LEFT_SHIFT  &kp BACKSPACE  &kp ENTER  &mo 2     &kp LANGUAGE_2  &kp LANGUAGE_1  &kp BACKSLASH
                    &none      &kp RIGHT     &kp DOWN   &kp LEFT   &kp UP          &kp UP         &kp LEFT   &kp DOWN  &kp RIGHT       &none
 &mkp LCLK          &mkp RCLK  &mkp MCLK                                                                               &mkp LCLK       &mkp RCLK       &mkp MCLK
-&mkp MB5           &mkp MB4   &kp LG(TAB)   &kp LG(D)  &kp LCTRL                                 &mkp MB5   &mkp MB4  &kp LG(TAB)     &kp LG(D)       &kp LCTRL
+&mkp MB4           &mkp MB5   &kp LG(TAB)   &kp LG(D)  &kp LCTRL                                 &mkp MB4   &mkp MB5  &kp LG(TAB)     &kp LG(D)       &kp LCTRL
             >;
         };
 
