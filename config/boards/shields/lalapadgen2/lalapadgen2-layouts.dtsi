@@ -1,7 +1,7 @@
 #include <physical_layouts.dtsi>
 
 / {
-    lalapadv2_physical_layout: lalapadv2_physical_layout {
+    lalapadgen2_physical_layout: lalapadgen2_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
 

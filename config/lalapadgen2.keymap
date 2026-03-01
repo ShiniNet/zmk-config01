@@ -17,13 +17,6 @@
 
 / {
     behaviors {
-        // Tracpad behaviors
-
-        tp_to_pos: tp_to_pos {
-            compatible = "zmk,behavior-trackpad-to-pos";
-            #binding-cells = <1>;
-        };
-
         zip_dyn_scale: zip_dyn_scale {
             compatible = "zmk,behavior-zip-dynamic-scale";
             #binding-cells = <2>;

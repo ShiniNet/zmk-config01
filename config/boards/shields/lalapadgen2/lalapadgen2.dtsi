@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/zip_dynamic_scale.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
-#include "lalapadv2-layouts.dtsi"
+#include "lalapadgen2-layouts.dtsi"
 
 #define POS_TP_LCLK_L  52
 #define POS_TP_RCLK_L  53
@@ -26,7 +26,7 @@
 
 / {
     chosen {
-        zmk,physical-layout = &lalapadv2_physical_layout;
+        zmk,physical-layout = &lalapadgen2_physical_layout;
     };
 
     default_transform: keymap_transform_0 {
@@ -75,6 +75,13 @@
         trackpad_split_L: trackpad_split_L@1 {
             compatible = "zmk,input-split";
             reg = <1>;
+        };
+    };
+
+    behaviors {
+        tp_to_pos: tp_to_pos {
+            compatible = "zmk,behavior-trackpad-to-pos";
+            #binding-cells = <1>;
         };
     };
 

@@ -1,4 +1,4 @@
-#include "lalapadv2.dtsi"
+#include "lalapadgen2.dtsi"
 
 &kscan0 {
     col-gpios
